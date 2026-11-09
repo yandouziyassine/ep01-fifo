@@ -1,0 +1,3326 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/master/misc/jny.schema.json",
+  "generator": "Yosys 0.33 (git sha1 2584903a060)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\\async_fifo",
+        "cell_sorts": [
+          {
+            "type": "$mem_v2",
+            "ports": [
+                {
+                  "name": "RD_ADDR",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "RD_ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "RD_CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "RD_DATA",
+                  "direction": "",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "RD_EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "RD_SRST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "WR_ADDR",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "WR_CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "WR_DATA",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "WR_EN",
+                  "direction": "io",
+                  "range": [2, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "mem",
+                  "attributes": {
+                    "src": "async_fifo.sv:36.28-36.31"
+                  },
+                  "parameters": {
+                    "ABITS": "00000000000000000000000000000001",
+                    "INIT": "xxxx",
+                    "MEMID": "\\mem",
+                    "OFFSET": "00000000000000000000000000000000",
+                    "RD_ARST_VALUE": "xx",
+                    "RD_CE_OVER_SRST": "0",
+                    "RD_CLK_ENABLE": "0",
+                    "RD_CLK_POLARITY": "0",
+                    "RD_COLLISION_X_MASK": "0",
+                    "RD_INIT_VALUE": "xx",
+                    "RD_PORTS": "00000000000000000000000000000001",
+                    "RD_SRST_VALUE": "xx",
+                    "RD_TRANSPARENCY_MASK": "0",
+                    "RD_WIDE_CONTINUATION": "0",
+                    "SIZE": "00000000000000000000000000000010",
+                    "WIDTH": "00000000000000000000000000000010",
+                    "WR_CLK_ENABLE": "1",
+                    "WR_CLK_POLARITY": "1",
+                    "WR_PORTS": "00000000000000000000000000000001",
+                    "WR_PRIORITY_MASK": "0",
+                    "WR_WIDE_CONTINUATION": "0"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$xor",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [2, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$xor$async_fifo.sv:44$84",
+                  "attributes": {
+                    "src": "async_fifo.sv:44.41-44.79"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$xor$async_fifo.sv:45$86",
+                  "attributes": {
+                    "src": "async_fifo.sv:45.41-45.79"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$xor$async_fifo_properties.svh:37$177",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:37.28-37.56"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$xor$async_fifo_properties.svh:38$179",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:38.25-38.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$xor$async_fifo_properties.svh:59$261",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:59.28-59.56"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$xor$async_fifo_properties.svh:60$263",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:60.25-60.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$add",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [2, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$add$async_fifo.sv:42$81",
+                  "attributes": {
+                    "src": "async_fifo.sv:42.43-42.76"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$add$async_fifo.sv:43$82",
+                  "attributes": {
+                    "src": "async_fifo.sv:43.43-43.76"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$add$async_fifo_properties.svh:0$183",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:0.0-0.0"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$add$async_fifo_properties.svh:0$267",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:0.0-0.0"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$add$async_fifo_properties.svh:34$171",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:34.29-34.76"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$add$async_fifo_properties.svh:38$188",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:38.16-38.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$add$async_fifo_properties.svh:56$255",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:56.29-56.76"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$add$async_fifo_properties.svh:60$272",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:60.16-60.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000011"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$assert",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$assert$async_fifo_properties.svh:12$300",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:12.37-13.65"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:14$301",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:14.16-14.43"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:17$302",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:17.37-18.65"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:19$303",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:19.16-19.43"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:32$304",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.43-34.77"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:35$305",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:35.45-36.50"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:36$306",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:36.51-37.58"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:37$307",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:37.59-38.51"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:38$308",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:38.52-40.77"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:40$309",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:40.78-41.52"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:41$310",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:41.53-42.47"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:44$311",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:44.25-45.59"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:45$312",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:45.60-46.55"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:47$313",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:47.8-48.51"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:55$317",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.42-56.77"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:57$318",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:57.46-58.50"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:58$319",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:58.51-59.58"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:59$320",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:59.59-60.51"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:60$321",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:60.52-61.64"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:61$322",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:61.65-62.52"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:62$323",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:62.53-63.47"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:64$324",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:64.31-64.65"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:66$325",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:66.25-67.75"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:67$326",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:67.76-68.55"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$assert$async_fifo_properties.svh:69$327",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:69.8-70.52"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$async_fifo.sv:79$101",
+                  "attributes": {
+                    "src": "async_fifo.sv:79.25-79.67"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo.sv:91$104",
+                  "attributes": {
+                    "src": "async_fifo.sv:91.26-91.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:13$117",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:13.16-13.64"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:18$127",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:18.16-18.64"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:34$172",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:34.16-34.76"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:36$175",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:36.20-36.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:37$178",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:37.16-37.57"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:40$190",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:40.16-40.76"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:41$191",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:41.16-41.51"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:42$192",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:42.16-42.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:51$210",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:51.36-51.70"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:56$256",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:56.16-56.76"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:58$259",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:58.20-58.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:59$262",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:59.16-59.57"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:61$274",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:61.16-61.63"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:62$275",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:62.16-62.51"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:63$276",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:63.16-63.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:64$278",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:64.39-64.64"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:73$297",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:73.36-73.70"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$cover",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$cover$async_fifo_properties.svh:48$314",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:48.52-49.33"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$cover$async_fifo_properties.svh:49$315",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:49.34-50.40"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$cover$async_fifo_properties.svh:50$316",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:50.41-51.71"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$cover$async_fifo_properties.svh:70$328",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:70.53-71.33"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$cover$async_fifo_properties.svh:71$329",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:71.34-72.41"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "$cover$async_fifo_properties.svh:72$330",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:72.42-73.71"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$async_fifo_properties.svh:14$119",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:14.24-14.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:19$129",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:19.24-19.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:45$194",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:45.16-45.30"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:45$195",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:45.34-45.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:46$199",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:46.16-46.33"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:46$200",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:46.37-46.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:67$280",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:67.16-67.30"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:67$281",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:67.34-67.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:67$284",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:67.62-67.74"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:68$286",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:68.16-68.33"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$async_fifo_properties.svh:68$287",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:68.37-68.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$async_fifo.sv:40$76",
+                  "attributes": {
+                    "src": "async_fifo.sv:40.43-40.51"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$async_fifo.sv:41$79",
+                  "attributes": {
+                    "src": "async_fifo.sv:41.43-41.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$async_fifo_properties.svh:35$173",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:35.31-35.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$async_fifo_properties.svh:48$202",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:48.39-48.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$async_fifo_properties.svh:48$205",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:48.12-48.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$async_fifo_properties.svh:57$257",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:57.32-57.45"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$async_fifo_properties.svh:70$289",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:70.40-70.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$async_fifo_properties.svh:70$292",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:70.12-70.51"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eqx",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eqx$async_fifo_properties.svh:0$182",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:0.0-0.0"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eqx$async_fifo_properties.svh:0$187",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:0.0-0.0"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eqx$async_fifo_properties.svh:0$266",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:0.0-0.0"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eqx$async_fifo_properties.svh:0$271",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:0.0-0.0"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$397",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$399",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$401",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:57.13-57.45|async_fifo_properties.svh:57.9-58.51"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$403",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$405",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:57.13-57.45|async_fifo_properties.svh:57.9-58.51"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$407",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$411",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$415",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$419",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$423",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$427",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$429",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:64.13-64.30|async_fifo_properties.svh:64.9-64.66"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$431",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$433",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:64.13-64.30|async_fifo_properties.svh:64.9-64.66"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$435",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35|async_fifo_properties.svh:55.5-65.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$437",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:66.9-66.18|async_fifo_properties.svh:66.5-69.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$439",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:66.9-66.18|async_fifo_properties.svh:66.5-69.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$443",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:66.9-66.18|async_fifo_properties.svh:66.5-69.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$445",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36|async_fifo_properties.svh:32.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$447",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36|async_fifo_properties.svh:32.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$449",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:35.13-35.44|async_fifo_properties.svh:35.9-36.51"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$451",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36|async_fifo_properties.svh:32.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$453",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:35.13-35.44|async_fifo_properties.svh:35.9-36.51"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$455",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36|async_fifo_properties.svh:32.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$459",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36|async_fifo_properties.svh:32.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$463",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36|async_fifo_properties.svh:32.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$467",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36|async_fifo_properties.svh:32.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$471",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36|async_fifo_properties.svh:32.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$475",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36|async_fifo_properties.svh:32.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$477",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:44.9-44.18|async_fifo_properties.svh:44.5-47.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$479",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:44.9-44.18|async_fifo_properties.svh:44.5-47.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$483",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:44.9-44.18|async_fifo_properties.svh:44.5-47.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$485",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:17.9-17.36|async_fifo_properties.svh:17.5-18.66"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$487",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:17.9-17.36|async_fifo_properties.svh:17.5-18.66"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$489",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:19.9-19.15|async_fifo_properties.svh:19.5-19.44"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$491",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:19.9-19.15|async_fifo_properties.svh:19.5-19.44"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$493",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:12.9-12.36|async_fifo_properties.svh:12.5-13.66"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$495",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:12.9-12.36|async_fifo_properties.svh:12.5-13.66"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$499",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:14.9-14.15|async_fifo_properties.svh:14.5-14.44"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$501",
+                  "attributes": {
+                    "src": "async_fifo.sv:92.17-92.26|async_fifo.sv:92.13-92.70"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procmux$504",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:69.13-69.22|async_fifo.sv:69.9-69.66"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$507",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:69.13-69.22|async_fifo.sv:69.9-69.66"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procmux$510",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:69.13-69.22|async_fifo.sv:69.9-69.66"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$le",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [3, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$le$async_fifo_properties.svh:38$189",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:38.16-38.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$le$async_fifo_properties.svh:60$273",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:60.16-60.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$logic_and$async_fifo.sv:40$75",
+                  "attributes": {
+                    "src": "async_fifo.sv:40.22-40.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo.sv:40$77",
+                  "attributes": {
+                    "src": "async_fifo.sv:40.22-40.51"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo.sv:41$78",
+                  "attributes": {
+                    "src": "async_fifo.sv:41.22-41.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo.sv:41$80",
+                  "attributes": {
+                    "src": "async_fifo.sv:41.22-41.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:12$116",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:12.9-12.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:17$126",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:17.9-17.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:32$170",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:32.9-32.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:45$196",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:45.16-45.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:45$198",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:45.16-45.58"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:46$201",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:46.16-46.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:48$204",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:48.14-48.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:49$206",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:49.11-49.32"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:50$208",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:50.11-50.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:51$211",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:51.11-51.70"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:55$254",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:55.9-55.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:67$282",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:67.16-67.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:67$283",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:67.16-67.58"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:67$285",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:67.16-67.74"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:68$288",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:68.16-68.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:70$291",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:70.14-70.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:71$293",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:71.11-71.32"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:72$295",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:72.11-72.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$async_fifo_properties.svh:73$298",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:73.11-73.70"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [2, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$auto$opt_expr.cc:706:replace_const_cells$624",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_or",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$logic_or$async_fifo_properties.svh:35$174",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:35.13-35.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_or$async_fifo_properties.svh:48$203",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:48.28-48.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_or$async_fifo_properties.svh:57$258",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:57.13-57.45"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_or$async_fifo_properties.svh:70$290",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:70.28-70.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [2, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$516",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$517",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$518",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$519",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$520",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$521",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$522",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$523",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$524",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$525",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$526",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$527",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$528",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$529",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$530",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$531",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$533",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$535",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$537",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$539",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$541",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$542",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$543",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$544",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$545",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$547",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$548",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$549",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$551",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$553",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:54.1-74.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$555",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$556",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$557",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$558",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$559",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$560",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$561",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$562",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$563",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$564",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$565",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$566",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$567",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$568",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$570",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$572",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$574",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$576",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$578",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$579",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$580",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$582",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$583",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$584",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$586",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$588",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:31.1-52.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$592",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:16.1-20.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$593",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:16.1-20.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$594",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:16.1-20.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$595",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:16.1-20.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$596",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:16.1-20.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$597",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:11.1-15.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$598",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:11.1-15.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$599",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:11.1-15.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$600",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:11.1-15.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$601",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:11.1-15.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$adff",
+            "ports": [
+                {
+                  "name": "ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$590",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:27.1-29.33"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$591",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:24.1-26.34"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$602",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:8.1-10.37"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$603",
+                  "attributes": {
+                    "src": "async_fifo_properties.svh:5.1-7.37"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$604",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:82.5-94.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$605",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:82.5-94.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "1",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$606",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:82.5-94.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$607",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:82.5-94.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$608",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:71.5-81.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$609",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:71.5-81.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$610",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:71.5-81.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$614",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:58.5-66.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$615",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:58.5-66.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$616",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:49.5-57.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$617",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:49.5-57.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$618",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:24.5-26.56"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$619",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "async_fifo.sv:21.5-23.56"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "0",
+                    "ARST_VALUE": "00",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "dynports": "00000000000000000000000000000001",
+            "hdlname": "\\async_fifo",
+            "src": "async_fifo.sv:5.1-108.10"
+        }
+      },
+      {
+        "name": "async_fifo_formal",
+        "cell_sorts": [
+          {
+            "type": "$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\\async_fifo",
+            "ports": [
+                {
+                  "name": "rd_clk",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "rd_data",
+                  "direction": "",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "rd_empty",
+                  "direction": "",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "rd_en",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "rd_ready",
+                  "direction": "",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "rst_n",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "wr_clk",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "wr_data",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "wr_en",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "wr_full",
+                  "direction": "",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "wr_ready",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "dut",
+                  "attributes": {
+                    "module_not_derived": "00000000000000000000000000000001",
+                    "src": "async_fifo_formal.sv:8.49-8.57"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$ff",
+            "ports": [
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$620",
+                  "attributes": {
+                    "src": "async_fifo_formal.sv:11.5-14.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$621",
+                  "attributes": {
+                    "src": "async_fifo_formal.sv:11.5-14.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$622",
+                  "attributes": {
+                    "src": "async_fifo_formal.sv:11.5-14.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$logic_not$async_fifo_formal.sv:13$12",
+                  "attributes": {
+                    "src": "async_fifo_formal.sv:13.34-13.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$assume",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$assume$async_fifo_formal.sv:13$13",
+                  "attributes": {
+                    "src": "async_fifo_formal.sv:13.26-13.41"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$512",
+                  "attributes": {
+                    "src": "async_fifo_formal.sv:13.13-13.25|async_fifo_formal.sv:13.9-13.42"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$514",
+                  "attributes": {
+                    "src": "async_fifo_formal.sv:13.13-13.25|async_fifo_formal.sv:13.9-13.42"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$anyseq",
+            "ports": [
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$anyseq$2",
+                  "attributes": {
+                    "reg": "wr_clk",
+                    "src": "async_fifo_formal.sv:0.0-0.0"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$anyseq$3",
+                  "attributes": {
+                    "reg": "rd_clk",
+                    "src": "async_fifo_formal.sv:0.0-0.0"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$anyseq$4",
+                  "attributes": {
+                    "reg": "rst_n",
+                    "src": "async_fifo_formal.sv:0.0-0.0"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$anyseq$5",
+                  "attributes": {
+                    "reg": "wr_en",
+                    "src": "async_fifo_formal.sv:0.0-0.0"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$anyseq$6",
+                  "attributes": {
+                    "reg": "rd_en",
+                    "src": "async_fifo_formal.sv:0.0-0.0"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$anyseq$7",
+                  "attributes": {
+                    "reg": "wr_data",
+                    "src": "async_fifo_formal.sv:0.0-0.0"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "hdlname": "\\async_fifo_formal",
+            "top": "00000000000000000000000000000001",
+            "src": "async_fifo_formal.sv:2.1-16.10"
+        }
+      }
+  ]
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-11-05T21:00:49" hostname="yassiney" package="pdr_probe" id="0" name="default" tests="1" errors="0" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="default" name="default" time="0">
+</testcase>
+<system-out>SBY 21:00:47 [logs/formal_pdr_probe] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/rtl/async_fifo.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_pdr_probe/src/async_fifo.sv'.
+SBY 21:00:47 [logs/formal_pdr_probe] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_properties.svh' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_pdr_probe/src/async_fifo_properties.svh'.
+SBY 21:00:47 [logs/formal_pdr_probe] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_formal.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_pdr_probe/src/async_fifo_formal.sv'.
+SBY 21:00:47 [logs/formal_pdr_probe] engine_0: abc pdr
+SBY 21:00:48 [logs/formal_pdr_probe] base: starting process &quot;cd logs/formal_pdr_probe/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 21:00:48 [logs/formal_pdr_probe] base: Warning: Encountered `translate_off' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using a portable and standards-compliant construct such as `ifdef is recommended!
+SBY 21:00:48 [logs/formal_pdr_probe] base: finished (returncode=0)
+SBY 21:00:48 [logs/formal_pdr_probe] prep: starting process &quot;cd logs/formal_pdr_probe/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 21:00:48 [logs/formal_pdr_probe] prep: finished (returncode=0)
+SBY 21:00:48 [logs/formal_pdr_probe] aig: starting process &quot;cd logs/formal_pdr_probe/model; yosys -ql design_aiger.log design_aiger.ys&quot;
+SBY 21:00:48 [logs/formal_pdr_probe] aig: finished (returncode=0)
+SBY 21:00:48 [logs/formal_pdr_probe] engine_0: starting process &quot;cd logs/formal_pdr_probe; yosys-abc -c 'read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw'&quot;
+SBY 21:00:48 [logs/formal_pdr_probe] engine_0: ABC command line: &quot;read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw&quot;.
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Warning: The last output is interpreted as a constraint.
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: VarMax = 300. FrameMax = 10000. QueMax = 0. TimeMax = 0. MonoCNF = no. SkipGen = no. SolveAll = no.
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Frame Clauses                                                     Max Queue Flops Cex      Time
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 1 : 0 22                                                                1    24      0.01 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 2 : 0 14 29                                                             3    43      0.01 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 3 : 0 15 9 34                                                           3    55      0.02 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 4 : 0 17 37 101 196                                                     7   119      0.12 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 5 : 0 17 25 87 103 171                                                  3   132      0.17 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 6 : 0 17 25 87 32 57 241                                                3   132      0.22 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 7 : 0 17 25 87 32 29 21 257                                             5   132      0.25 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 8 : 0 17 25 87 32 4 23 14 253                                           1   132      0.27 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 9 : 0 17 25 87 32 4 23 18 12 269                                        4   132      0.30 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 10 : 0 17 25 87 32 4 23 6 6 3 271                                        3   132      0.32 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: 11 : 0 17 25 87 32 4 23 6 6 0 0 271                                      0   132      0.33 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Invariant F[9] : 271 clauses with 128 flops (out of 154) (cex = 0, ave = 8.88)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Verification of invariant with 271 clauses was successful.  Time =     0.01 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Block =  154  Oblig =   876  Clause =   612  Call =  7583 (sat=60.1%)  Cex =   0  Start =  18
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: SAT solving =     0.23 sec ( 66.64 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: unsat     =     0.03 sec (  7.34 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: sat       =     0.20 sec ( 59.30 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Generalize  =     0.16 sec ( 45.45 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Push clause =     0.09 sec ( 26.66 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Ternary sim =     0.01 sec (  1.74 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Containment =     0.00 sec (  0.35 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: CNF compute =     0.01 sec (  3.66 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Refinement  =     0.00 sec (  0.00 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: TOTAL       =     0.34 sec (100.00 %)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Property proved.  Time =     0.35 sec
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Counter-example is not available.
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: finished (returncode=0)
+SBY 21:00:49 [logs/formal_pdr_probe] engine_0: Status returned by engine: PASS
+SBY 21:00:49 [logs/formal_pdr_probe] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:01 (1)
+SBY 21:00:49 [logs/formal_pdr_probe] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:00:49 [logs/formal_pdr_probe] summary: engine_0 (abc pdr) returned PASS
+SBY 21:00:49 [logs/formal_pdr_probe] summary: engine_0 did not produce any traces
+SBY 21:00:49 [logs/formal_pdr_probe] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

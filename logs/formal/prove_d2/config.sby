@@ -1,0 +1,16 @@
+[options]
+multiclock on
+timeout 90
+mode prove
+
+[engines]
+abc pdr
+
+[script]
+read -formal -sv async_fifo.sv async_fifo_formal.sv
+prep -top async_fifo_formal
+
+[files]
+rtl/async_fifo.sv
+formal/async_fifo_properties.svh
+formal/async_fifo_formal.sv

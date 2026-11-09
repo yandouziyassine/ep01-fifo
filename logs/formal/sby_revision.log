@@ -1,0 +1,4 @@
+$ git -C build/sby rev-parse HEAD
+85dd50b92a3acf170954a06f20f49e2162ce5273
+
+EXIT_STATUS=0

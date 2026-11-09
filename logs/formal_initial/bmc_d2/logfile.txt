@@ -1,0 +1,22 @@
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/rtl/async_fifo.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2/src/async_fifo.sv'.
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_properties.svh' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2/src/async_fifo_properties.svh'.
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_formal.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2/src/async_fifo_formal.sv'.
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] engine_0: smtbmc z3
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] base: starting process "cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] base: Warning: Encountered `translate_off' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using a portable and standards-compliant construct such as `ifdef is recommended!
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] base: finished (returncode=0)
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] prep: starting process "cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2/model; yosys -ql design_prep.log design_prep.ys"
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] prep: finished (returncode=0)
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] smt2: starting process "cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] smt2: finished (returncode=0)
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] engine_0: starting process "cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2; yosys-smtbmc -s z3 --presat --noprogress -t 40  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 20:58:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] engine_0: ##   0:00:00  Solver: z3
+SBY 20:58:14 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] engine_0: ##   0:00:03  Checking assumptions in step 0..
+SBY 20:59:14 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] engine_0: ##   0:01:02  waiting for solver (1 minute)
+SBY 20:59:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] Reached TIMEOUT (90 seconds). Terminating all subprocesses.
+SBY 20:59:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] engine_0: terminating process
+SBY 20:59:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] summary: Elapsed clock time [H:MM:SS (secs)]: 0:01:31 (91)
+SBY 20:59:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:59:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] summary: engine_0 (smtbmc z3) did not return a status
+SBY 20:59:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] summary: engine_0 did not produce any traces
+SBY 20:59:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d2] DONE (TIMEOUT, rc=8)

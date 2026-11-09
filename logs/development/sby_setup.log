@@ -1,0 +1,19 @@
+Cloning into 'build/sby'...
+Note: switching to '85dd50b92a3acf170954a06f20f49e2162ce5273'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  47% (87/184)Updating files:  48% (89/184)Updating files:  49% (91/184)Updating files:  50% (92/184)Updating files:  51% (94/184)Updating files:  52% (96/184)Updating files:  53% (98/184)Updating files:  54% (100/184)Updating files:  55% (102/184)Updating files:  56% (104/184)Updating files:  57% (105/184)Updating files:  58% (107/184)Updating files:  59% (109/184)Updating files:  60% (111/184)Updating files:  61% (113/184)Updating files:  62% (115/184)Updating files:  63% (116/184)Updating files:  64% (118/184)Updating files:  65% (120/184)Updating files:  66% (122/184)Updating files:  67% (124/184)Updating files:  68% (126/184)Updating files:  69% (127/184)Updating files:  70% (129/184)Updating files:  71% (131/184)Updating files:  72% (133/184)Updating files:  73% (135/184)Updating files:  74% (137/184)Updating files:  75% (138/184)Updating files:  76% (140/184)Updating files:  77% (142/184)Updating files:  78% (144/184)Updating files:  79% (146/184)Updating files:  80% (148/184)Updating files:  81% (150/184)Updating files:  82% (151/184)Updating files:  83% (153/184)Updating files:  84% (155/184)Updating files:  85% (157/184)Updating files:  86% (159/184)Updating files:  87% (161/184)Updating files:  88% (162/184)Updating files:  89% (164/184)Updating files:  90% (166/184)Updating files:  91% (168/184)Updating files:  92% (170/184)Updating files:  93% (172/184)Updating files:  94% (173/184)Updating files:  95% (175/184)Updating files:  96% (177/184)Updating files:  97% (179/184)Updating files:  98% (181/184)Updating files:  99% (183/184)Updating files: 100% (184/184)Updating files: 100% (184/184), done.

@@ -1,0 +1,9 @@
+Collecting cocotb==2.0.1 (from -r requirements.txt (line 1))
+  Downloading cocotb-2.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.8 kB)
+Collecting find_libpython (from cocotb==2.0.1->-r requirements.txt (line 1))
+  Downloading find_libpython-0.5.1-py3-none-any.whl.metadata (2.8 kB)
+Downloading cocotb-2.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 5.9 MB/s eta 0:00:00
+Downloading find_libpython-0.5.1-py3-none-any.whl (9.2 kB)
+Installing collected packages: find_libpython, cocotb
+Successfully installed cocotb-2.0.1 find_libpython-0.5.1

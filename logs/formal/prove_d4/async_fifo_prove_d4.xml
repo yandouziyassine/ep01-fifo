@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-11-05T21:02:50" hostname="yassiney" package="async_fifo" id="0" name="prove_d4" tests="1" errors="0" failures="0" time="11" skipped="0">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="prove_d4" name="prove_d4" time="11">
+</testcase>
+<system-out>SBY 21:02:37 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/rtl/async_fifo.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4/src/async_fifo.sv'.
+SBY 21:02:37 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_properties.svh' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4/src/async_fifo_properties.svh'.
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_formal.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4/src/async_fifo_formal.sv'.
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: abc pdr
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] base: starting process &quot;cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] base: Warning: Encountered `translate_off' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using a portable and standards-compliant construct such as `ifdef is recommended!
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] base: finished (returncode=0)
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] prep: starting process &quot;cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] prep: finished (returncode=0)
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] aig: starting process &quot;cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4/model; yosys -ql design_aiger.log design_aiger.ys&quot;
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] aig: finished (returncode=0)
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: starting process &quot;cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4; yosys-abc -c 'read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw'&quot;
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: ABC command line: &quot;read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw&quot;.
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Warning: The last output is interpreted as a constraint.
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: VarMax = 300. FrameMax = 10000. QueMax = 0. TimeMax = 0. MonoCNF = no. SkipGen = no. SolveAll = no.
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Frame Clauses                                                     Max Queue Flops Cex      Time
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 1 : 0 37                                                                1    39      0.01 sec
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 2 : 0 21 74                                                             2    66      0.02 sec
+SBY 21:02:38 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 3 : 0 21 61 112                                                        11   103      0.05 sec
+SBY 21:02:39 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 4 : 0 21 47 113 256                                                     5   183      0.14 sec
+SBY 21:02:39 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 5 : 0 21 35 100 125 248                                                 3   198      0.21 sec
+SBY 21:02:39 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 6 : 0 21 35 100 33 46 330                                               5   199      0.26 sec
+SBY 21:02:39 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 7 : 0 21 35 102 32 33 47 361                                           21   200      0.31 sec
+SBY 21:02:39 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 8 : 0 21 35 100 21 16 16 31 354                                         3   200      0.34 sec
+SBY 21:02:39 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 9 : 0 21 35 102 24 19 36 67 116 427                                    58   201      0.47 sec
+SBY 21:02:39 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 10 : 0 21 37 103 24 21 29 40 76 118 488                                 26   207      0.59 sec
+SBY 21:02:39 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 11 : 0 21 35 102 23 16 32 35 60 73 89 584                               33   207      0.73 sec
+SBY 21:02:39 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 12 : 0 21 35 102 23 16 26 32 48 28 27 57 547                             3   207      0.79 sec
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 13 : 0 21 35 102 23 16 26 32 52 41 71 138 215 715                       69   208      1.13 sec
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 14 : 0 21 35 102 23 16 26 32 49 28 16 39 44 86 722                      11   208      1.24 sec
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 15 : 0 21 35 102 23 16 26 32 49 28 20 35 41 54 64 825                   26   208      1.40 sec
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 16 : 0 21 35 102 23 16 26 32 49 28 16 41 33 65 91 142 951               41   209      1.75 sec
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 17 : 0 21 35 102 23 16 26 32 49 28 16 35 25 33 36 81 141 939            12   209      1.89 sec
+SBY 21:02:41 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 18 : 0 21 35 102 23 16 26 32 49 28 16 35 24 48 51 87 129 139 964        43   209      2.13 sec
+SBY 21:02:41 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 19 : ... 35 102 23 16 26 32 49 28 16 35 24 42 43 66 86 117 177 923      36   209      2.32 sec
+SBY 21:02:41 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 20 : ... 102 23 16 26 32 49 28 16 35 24 42 43 56 48 112 230 354 1110   145   209      2.90 sec
+SBY 21:02:42 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 21 : ... 23 16 26 32 49 28 16 35 24 42 43 52 45 33 109 156 283 988      26   209      3.12 sec
+SBY 21:02:42 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 22 : ... 16 26 32 49 28 16 35 24 42 43 52 45 38 92 112 249 348 972      39   209      3.42 sec
+SBY 21:02:42 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 23 : ... 26 32 49 28 16 35 24 42 43 50 40 30 76 35 109 291 359 1166     59   209      3.89 sec
+SBY 21:02:43 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 24 : ... 32 49 28 16 35 24 42 43 50 40 30 76 36 85 109 203 284 1137     15   209      4.15 sec
+SBY 21:02:43 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 25 : ... 49 28 16 35 24 42 43 50 40 30 76 37 86 101 153 242 400 1064    50   209      4.52 sec
+SBY 21:02:43 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 26 : ... 28 16 35 24 42 43 50 40 30 76 37 74 90 101 184 359 376 1016    21   209      4.92 sec
+SBY 21:02:44 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 27 : ... 35 24 42 43 50 40 30 76 37 74 90 104 166 101 269 350 1146      33   209      5.31 sec
+SBY 21:02:44 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 28 : ... 35 24 42 43 50 40 30 76 37 74 90 98 163 49 167 228 306 1207    26   209      5.68 sec
+SBY 21:02:45 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 29 : ... 42 43 50 40 30 76 37 74 90 98 163 50 188 143 309 605 1187      42   209      6.29 sec
+SBY 21:02:45 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 30 : ... 43 50 40 30 76 37 74 90 98 163 40 147 92 111 281 359 1334      25   209      6.72 sec
+SBY 21:02:46 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 31 : ... 50 40 30 76 37 74 90 98 163 40 147 64 84 136 236 400 1231      19   209      7.05 sec
+SBY 21:02:46 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 32 : ... 40 30 76 37 74 90 98 163 40 147 64 83 97 194 360 419 1229      20   209      7.50 sec
+SBY 21:02:46 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 33 : ... 40 30 76 37 74 90 98 163 40 147 64 83 57 61 87 175 295 1395    17   209      7.80 sec
+SBY 21:02:47 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 34 : ... 30 76 37 74 90 98 163 40 147 64 83 57 61 66 57 198 369 1340    18   209      8.09 sec
+SBY 21:02:47 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 35 : ... 37 74 90 98 163 40 147 64 83 57 61 51 19 107 318 354 1248      16   209      8.46 sec
+SBY 21:02:47 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 36 : ... 74 90 98 163 40 147 64 83 57 61 51 16 106 118 239 452 1277     21   209      8.88 sec
+SBY 21:02:48 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 37 : ... 90 98 163 40 147 64 83 57 61 51 15 101 36 81 279 359 1364      39   209      9.30 sec
+SBY 21:02:48 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 38 : ... 98 163 40 147 64 83 57 61 51 15 101 31 57 93 269 367 1378      28   209      9.71 sec
+SBY 21:02:49 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 39 : ... 163 40 147 64 83 57 61 51 15 101 31 42 55 89 260 194 1502      31   209     10.07 sec
+SBY 21:02:49 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 40 : ... 163 40 147 64 83 57 61 51 15 101 31 28 15 2 4 60 149 1742       1   209     10.35 sec
+SBY 21:02:49 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 41 : ... 40 147 64 83 57 61 51 15 101 31 28 15 2 5 61 163 287 1550      20   209     10.61 sec
+SBY 21:02:49 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: 42 : ... 163 40 147 64 83 57 61 51 15 101 31 28 15 2 0 0 0 0 0 1956      0   209     10.85 sec
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Invariant F[37] : 1956 clauses with 209 flops (out of 221) (cex = 0, ave = 15.78)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Verification of invariant with 1956 clauses was successful.  Time =     0.04 sec
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Block = 1197  Oblig = 12845  Clause =  8860  Call =193651 (sat=58.6%)  Cex =   0  Start = 618
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: SAT solving =     8.75 sec ( 80.31 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: unsat     =     2.35 sec ( 21.53 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: sat       =     6.41 sec ( 58.78 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Generalize  =     4.29 sec ( 39.37 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Push clause =     5.16 sec ( 47.33 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Ternary sim =     0.09 sec (  0.86 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Containment =     0.05 sec (  0.50 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: CNF compute =     0.47 sec (  4.27 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Refinement  =     0.00 sec (  0.00 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: TOTAL       =    10.90 sec (100.00 %)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Property proved.  Time =    10.91 sec
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Counter-example is not available.
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: finished (returncode=0)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] engine_0: Status returned by engine: PASS
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:12 (12)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:11 (11)
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] summary: engine_0 (abc pdr) returned PASS
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] summary: engine_0 did not produce any traces
+SBY 21:02:50 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

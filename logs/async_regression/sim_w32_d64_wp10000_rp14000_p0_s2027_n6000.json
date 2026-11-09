@@ -1,0 +1,20 @@
+{
+  "seed": 2027,
+  "width": 32,
+  "depth": 64,
+  "wr_period_ps": 10000,
+  "rd_period_ps": 14000,
+  "phase_ps": 0,
+  "random_events": 6000,
+  "events": 9606,
+  "write_edges": 3057,
+  "read_edges": 2121,
+  "writes": 1005,
+  "reads": 907,
+  "rejected_writes": 472,
+  "rejected_reads": 226,
+  "collisions": 121,
+  "concurrent_accepts": 0,
+  "resets": 4,
+  "peak": 64
+}

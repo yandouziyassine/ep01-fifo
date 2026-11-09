@@ -1,0 +1,15 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:01:19 (79)
+Elapsed process time [H:MM:SS (secs)]: 0:01:17 (77)
+engine_0 (smtbmc --unroll z3) returned pass
+cover trace: engine_0/trace0.vcd
+  reached cover statement async_fifo_formal.dut.$cover$async_fifo_properties.svh:71$367 at async_fifo_properties.svh:71.34-72.41 in step 6
+cover trace: engine_0/trace1.vcd
+  reached cover statement async_fifo_formal.dut.$cover$async_fifo_properties.svh:48$352 at async_fifo_properties.svh:48.52-49.33 in step 6
+cover trace: engine_0/trace2.vcd
+  reached cover statement async_fifo_formal.dut.$cover$async_fifo_properties.svh:49$353 at async_fifo_properties.svh:49.34-50.40 in step 10
+cover trace: engine_0/trace3.vcd
+  reached cover statement async_fifo_formal.dut.$cover$async_fifo_properties.svh:70$366 at async_fifo_properties.svh:70.53-71.33 in step 13
+cover trace: engine_0/trace4.vcd
+  reached cover statement async_fifo_formal.dut.$cover$async_fifo_properties.svh:50$354 at async_fifo_properties.svh:50.41-51.71 in step 22
+cover trace: engine_0/trace5.vcd
+  reached cover statement async_fifo_formal.dut.$cover$async_fifo_properties.svh:72$368 at async_fifo_properties.svh:72.42-73.71 in step 29

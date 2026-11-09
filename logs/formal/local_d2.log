@@ -1,0 +1,53 @@
+$ /usr/bin/python3 /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/build/sby/sbysrc/sby.py -d /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2 formal/async_fifo.sby local_d2
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/rtl/async_fifo.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2/src/async_fifo.sv'.
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_properties.svh' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2/src/async_fifo_properties.svh'.
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_formal.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2/src/async_fifo_formal.sv'.
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: abc pdr
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] base: starting process "cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] base: Warning: Encountered `translate_off' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using a portable and standards-compliant construct such as `ifdef is recommended!
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] base: finished (returncode=0)
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] prep: starting process "cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2/model; yosys -ql design_prep.log design_prep.ys"
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] prep: finished (returncode=0)
+SBY 21:02:31 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] aig: starting process "cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2/model; yosys -ql design_aiger.log design_aiger.ys"
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] aig: finished (returncode=0)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: starting process "cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2; yosys-abc -c 'read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw'"
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: ABC command line: "read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw".
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Warning: The last output is interpreted as a constraint.
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: VarMax = 300. FrameMax = 10000. QueMax = 0. TimeMax = 0. MonoCNF = no. SkipGen = no. SolveAll = no.
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Frame Clauses                                                     Max Queue Flops Cex      Time
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 1 : 0 32                                                                1    34      0.01 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 2 : 0 23 42                                                             3    64      0.01 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 3 : 0 23 17 52                                                          3    80      0.02 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 4 : 0 24 23 87 164                                                      6   112      0.08 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 5 : 0 24 21 47 156 219                                                  7   152      0.15 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 6 : 0 24 21 39 83 110 211                                               2   167      0.21 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 7 : 0 24 21 39 83 35 47 306                                             4   167      0.26 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 8 : 0 24 21 39 83 28 4 17 296                                           1   167      0.27 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 9 : 0 24 21 39 83 28 4 23 21 312                                        5   167      0.30 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 10 : 0 24 21 39 83 28 4 17 10 11 309                                     3   167      0.32 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 11 : 0 24 21 39 83 28 4 17 8 10 9 321                                    3   167      0.34 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: 12 : 0 24 21 39 83 28 4 17 8 8 0 0 321                                   0   167      0.35 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Invariant F[10] : 321 clauses with 163 flops (out of 180) (cex = 0, ave = 8.68)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Verification of invariant with 321 clauses was successful.  Time =     0.00 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Block =  213  Oblig =  1148  Clause =   800  Call =  9775 (sat=60.7%)  Cex =   0  Start =  24
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: SAT solving =     0.25 sec ( 69.01 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: unsat     =     0.02 sec (  6.68 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: sat       =     0.23 sec ( 62.33 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Generalize  =     0.17 sec ( 45.99 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Push clause =     0.10 sec ( 27.53 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Ternary sim =     0.01 sec (  1.99 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Containment =     0.00 sec (  0.26 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: CNF compute =     0.01 sec (  3.75 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Refinement  =     0.00 sec (  0.00 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: TOTAL       =     0.37 sec (100.00 %)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Property proved.  Time =     0.37 sec
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Counter-example is not available.
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: finished (returncode=0)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] engine_0: Status returned by engine: PASS
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:01 (1)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] summary: engine_0 (abc pdr) returned PASS
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] summary: engine_0 did not produce any traces
+SBY 21:02:32 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2] DONE (PASS, rc=0)
+
+EXIT_STATUS=0

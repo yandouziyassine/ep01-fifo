@@ -1,0 +1,34 @@
+[tasks]
+local_d2 local d2
+prove_d2 safety_prove d2
+prove_d4 safety_prove d4
+bmc_d2 safety_bmc d2
+bmc_d4 safety_bmc d4
+cover_d2 coverage d2
+
+[options]
+multiclock on
+timeout 90
+local: mode prove
+safety_prove: mode prove
+safety_bmc: mode bmc
+safety_bmc: depth 20
+coverage: mode cover
+coverage: depth 64
+
+[engines]
+local: abc pdr
+safety_prove: abc pdr
+safety_bmc: smtbmc --unroll z3
+coverage: smtbmc --unroll z3
+
+[script]
+local: read -formal -sv -DLOCAL_ONLY async_fifo.sv async_fifo_formal.sv
+~local: read -formal -sv async_fifo.sv async_fifo_formal.sv
+d4: chparam -set DEPTH 4 async_fifo_formal
+prep -top async_fifo_formal
+
+[files]
+rtl/async_fifo.sv
+formal/async_fifo_properties.svh
+formal/async_fifo_formal.sv

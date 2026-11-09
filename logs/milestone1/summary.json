@@ -1,0 +1,409 @@
+{
+  "passed": true,
+  "cycles_per_seed": 10000,
+  "seeds": [
+    1,
+    42,
+    2027
+  ],
+  "source_sha256": {
+    "rtl/sync_fifo.sv": "e8caa93b97f277638b4a40d47f799a30508aad49502b6714a041d74179c05c79",
+    "tb/tb_sync_fifo.sv": "387557e88af2aeee0177c28f781fda7ba4df1529034a07c09aa083093b11fb52",
+    "scripts/regress.py": "8c37691af4e57bf591e6c9e010451d5a53270c4d4add3002cdecff5f9cc6a8de",
+    "scripts/run_iverilog.sh": "dfadc872d8b55348f17e819a66eb9b626bc4a8d45695de186b088f9e8abd8569"
+  },
+  "results": [
+    {
+      "name": "verilator_version",
+      "command": [
+        "verilator",
+        "--version"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "iverilog_version",
+      "command": [
+        "iverilog",
+        "-V"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "vvp_version",
+      "command": [
+        "vvp",
+        "-V"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "lint_w1_d2",
+      "command": [
+        "verilator",
+        "--lint-only",
+        "--Wall",
+        "--top-module",
+        "sync_fifo",
+        "-GDATA_WIDTH=1",
+        "-GDEPTH=2",
+        "rtl/sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "compile_w1_d2",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_sync_fifo",
+        "-Ptb_sync_fifo.DATA_WIDTH=1",
+        "-Ptb_sync_fifo.DEPTH=2",
+        "-o",
+        "build/w1_d2.vvp",
+        "rtl/sync_fifo.sv",
+        "tb/tb_sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w1_d2_seed1",
+      "command": [
+        "vvp",
+        "build/w1_d2.vvp",
+        "+SEED=1",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w1_d2_seed42",
+      "command": [
+        "vvp",
+        "build/w1_d2.vvp",
+        "+SEED=42",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w1_d2_seed2027",
+      "command": [
+        "vvp",
+        "build/w1_d2.vvp",
+        "+SEED=2027",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "lint_w8_d4",
+      "command": [
+        "verilator",
+        "--lint-only",
+        "--Wall",
+        "--top-module",
+        "sync_fifo",
+        "-GDATA_WIDTH=8",
+        "-GDEPTH=4",
+        "rtl/sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "compile_w8_d4",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_sync_fifo",
+        "-Ptb_sync_fifo.DATA_WIDTH=8",
+        "-Ptb_sync_fifo.DEPTH=4",
+        "-o",
+        "build/w8_d4.vvp",
+        "rtl/sync_fifo.sv",
+        "tb/tb_sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w8_d4_seed1",
+      "command": [
+        "vvp",
+        "build/w8_d4.vvp",
+        "+SEED=1",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w8_d4_seed42",
+      "command": [
+        "vvp",
+        "build/w8_d4.vvp",
+        "+SEED=42",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w8_d4_seed2027",
+      "command": [
+        "vvp",
+        "build/w8_d4.vvp",
+        "+SEED=2027",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "lint_w16_d16",
+      "command": [
+        "verilator",
+        "--lint-only",
+        "--Wall",
+        "--top-module",
+        "sync_fifo",
+        "-GDATA_WIDTH=16",
+        "-GDEPTH=16",
+        "rtl/sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "compile_w16_d16",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_sync_fifo",
+        "-Ptb_sync_fifo.DATA_WIDTH=16",
+        "-Ptb_sync_fifo.DEPTH=16",
+        "-o",
+        "build/w16_d16.vvp",
+        "rtl/sync_fifo.sv",
+        "tb/tb_sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w16_d16_seed1",
+      "command": [
+        "vvp",
+        "build/w16_d16.vvp",
+        "+SEED=1",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w16_d16_seed42",
+      "command": [
+        "vvp",
+        "build/w16_d16.vvp",
+        "+SEED=42",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w16_d16_seed2027",
+      "command": [
+        "vvp",
+        "build/w16_d16.vvp",
+        "+SEED=2027",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "lint_w32_d256",
+      "command": [
+        "verilator",
+        "--lint-only",
+        "--Wall",
+        "--top-module",
+        "sync_fifo",
+        "-GDATA_WIDTH=32",
+        "-GDEPTH=256",
+        "rtl/sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "compile_w32_d256",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_sync_fifo",
+        "-Ptb_sync_fifo.DATA_WIDTH=32",
+        "-Ptb_sync_fifo.DEPTH=256",
+        "-o",
+        "build/w32_d256.vvp",
+        "rtl/sync_fifo.sv",
+        "tb/tb_sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w32_d256_seed1",
+      "command": [
+        "vvp",
+        "build/w32_d256.vvp",
+        "+SEED=1",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w32_d256_seed42",
+      "command": [
+        "vvp",
+        "build/w32_d256.vvp",
+        "+SEED=42",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w32_d256_seed2027",
+      "command": [
+        "vvp",
+        "build/w32_d256.vvp",
+        "+SEED=2027",
+        "+CYCLES=10000"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "compile_invalid_DEPTH_1",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "sync_fifo",
+        "-Psync_fifo.DEPTH=1",
+        "-o",
+        "build/invalid_DEPTH_1.vvp",
+        "rtl/sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "invalid_DEPTH_1",
+      "command": [
+        "vvp",
+        "build/invalid_DEPTH_1.vvp"
+      ],
+      "exit_status": 1,
+      "expected_failure": true,
+      "passed": true
+    },
+    {
+      "name": "compile_invalid_DEPTH_3",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "sync_fifo",
+        "-Psync_fifo.DEPTH=3",
+        "-o",
+        "build/invalid_DEPTH_3.vvp",
+        "rtl/sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "invalid_DEPTH_3",
+      "command": [
+        "vvp",
+        "build/invalid_DEPTH_3.vvp"
+      ],
+      "exit_status": 1,
+      "expected_failure": true,
+      "passed": true
+    },
+    {
+      "name": "compile_invalid_DATA_WIDTH_0",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "sync_fifo",
+        "-Psync_fifo.DATA_WIDTH=0",
+        "-o",
+        "build/invalid_DATA_WIDTH_0.vvp",
+        "rtl/sync_fifo.sv"
+      ],
+      "exit_status": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "name": "invalid_DATA_WIDTH_0",
+      "command": [
+        "vvp",
+        "build/invalid_DATA_WIDTH_0.vvp"
+      ],
+      "exit_status": 1,
+      "expected_failure": true,
+      "passed": true
+    }
+  ]
+}

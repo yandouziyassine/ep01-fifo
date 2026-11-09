@@ -1,0 +1,4 @@
+$ z3 --version
+Z3 version 4.8.12 - 64 bit
+
+EXIT_STATUS=0

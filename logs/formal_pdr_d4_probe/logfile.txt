@@ -1,0 +1,79 @@
+SBY 21:01:24 [logs/formal_pdr_d4_probe] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/rtl/async_fifo.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_pdr_d4_probe/src/async_fifo.sv'.
+SBY 21:01:24 [logs/formal_pdr_d4_probe] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_properties.svh' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_pdr_d4_probe/src/async_fifo_properties.svh'.
+SBY 21:01:24 [logs/formal_pdr_d4_probe] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_formal.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_pdr_d4_probe/src/async_fifo_formal.sv'.
+SBY 21:01:24 [logs/formal_pdr_d4_probe] engine_0: abc pdr
+SBY 21:01:24 [logs/formal_pdr_d4_probe] base: starting process "cd logs/formal_pdr_d4_probe/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 21:01:24 [logs/formal_pdr_d4_probe] base: Warning: Encountered `translate_off' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using a portable and standards-compliant construct such as `ifdef is recommended!
+SBY 21:01:24 [logs/formal_pdr_d4_probe] base: finished (returncode=0)
+SBY 21:01:24 [logs/formal_pdr_d4_probe] prep: starting process "cd logs/formal_pdr_d4_probe/model; yosys -ql design_prep.log design_prep.ys"
+SBY 21:01:24 [logs/formal_pdr_d4_probe] prep: finished (returncode=0)
+SBY 21:01:24 [logs/formal_pdr_d4_probe] aig: starting process "cd logs/formal_pdr_d4_probe/model; yosys -ql design_aiger.log design_aiger.ys"
+SBY 21:01:25 [logs/formal_pdr_d4_probe] aig: finished (returncode=0)
+SBY 21:01:25 [logs/formal_pdr_d4_probe] engine_0: starting process "cd logs/formal_pdr_d4_probe; yosys-abc -c 'read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw'"
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: ABC command line: "read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw".
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: Warning: The last output is interpreted as a constraint.
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: VarMax = 300. FrameMax = 10000. QueMax = 0. TimeMax = 0. MonoCNF = no. SkipGen = no. SolveAll = no.
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: Frame Clauses                                                     Max Queue Flops Cex      Time
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 1 : 0 31                                                                1    32      0.01 sec
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 2 : 0 17 61                                                             1    51      0.02 sec
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 3 : 0 17 56 96                                                          9    82      0.06 sec
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 4 : 0 17 37 87 207                                                      5   153      0.16 sec
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 5 : 0 17 29 78 112 249                                                  6   167      0.32 sec
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 6 : 0 17 29 74 19 27 283                                                3   167      0.36 sec
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 7 : 0 17 29 74 22 31 52 304                                            11   167      0.43 sec
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 8 : 0 17 29 74 15 18 39 41 322                                          3   167      0.49 sec
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 9 : 0 17 30 80 25 40 43 85 90 456                                      33   177      0.69 sec
+SBY 21:01:26 [logs/formal_pdr_d4_probe] engine_0: 10 : 0 17 27 67 18 15 20 13 33 39 450                                    1   178      0.75 sec
+SBY 21:01:27 [logs/formal_pdr_d4_probe] engine_0: 11 : 0 17 27 67 18 15 29 27 57 71 83 519                                30   178      0.94 sec
+SBY 21:01:27 [logs/formal_pdr_d4_probe] engine_0: 12 : 0 17 27 67 18 15 22 24 40 41 48 77 511                             21   179      1.05 sec
+SBY 21:01:27 [logs/formal_pdr_d4_probe] engine_0: 13 : 0 17 27 67 18 15 22 24 46 37 85 134 219 692                        74   179      1.62 sec
+SBY 21:01:27 [logs/formal_pdr_d4_probe] engine_0: 14 : 0 17 27 67 18 15 22 24 43 26 18 43 37 36 738                        3   179      1.79 sec
+SBY 21:01:28 [logs/formal_pdr_d4_probe] engine_0: 15 : 0 17 27 67 18 15 22 24 43 26 22 56 53 83 126 840                   35   180      2.17 sec
+SBY 21:01:28 [logs/formal_pdr_d4_probe] engine_0: 16 : 0 17 27 67 18 15 22 24 43 26 18 53 42 51 66 111 931                39   180      2.74 sec
+SBY 21:01:29 [logs/formal_pdr_d4_probe] engine_0: 17 : 0 17 27 67 18 15 22 24 43 26 18 49 34 31 29 66 108 960             12   180      3.08 sec
+SBY 21:01:29 [logs/formal_pdr_d4_probe] engine_0: 18 : 0 17 27 67 18 15 22 24 43 26 18 49 33 43 39 68 87 130 983          39   180      3.58 sec
+SBY 21:01:30 [logs/formal_pdr_d4_probe] engine_0: 19 : ... 17 27 67 18 15 22 24 43 26 18 49 33 36 36 47 44 83 171 864      3   180      3.77 sec
+SBY 21:01:30 [logs/formal_pdr_d4_probe] engine_0: 20 : ... 27 67 18 15 22 24 43 26 18 49 33 36 36 52 48 87 191 279 998    78   180      4.60 sec
+SBY 21:01:31 [logs/formal_pdr_d4_probe] engine_0: 21 : ... 18 15 22 24 43 26 18 49 33 36 36 49 44 32 146 201 295 900      41   180      5.21 sec
+SBY 21:01:32 [logs/formal_pdr_d4_probe] engine_0: 22 : ... 15 22 24 43 26 18 49 33 36 36 49 44 43 138 159 349 456 1000    39   180      6.15 sec
+SBY 21:01:32 [logs/formal_pdr_d4_probe] engine_0: 23 : ... 22 24 43 26 18 49 33 36 36 49 44 27 79 40 87 260 333 1054      28   180      6.65 sec
+SBY 21:01:33 [logs/formal_pdr_d4_probe] engine_0: 24 : ... 24 43 26 18 49 33 36 36 49 44 27 79 41 80 212 316 371 1077     31   180      7.23 sec
+SBY 21:01:34 [logs/formal_pdr_d4_probe] engine_0: 25 : ... 43 26 18 39 33 36 36 49 44 27 79 40 91 143 186 215 299 1222    66   180      7.94 sec
+SBY 21:01:34 [logs/formal_pdr_d4_probe] engine_0: 26 : ... 18 39 33 36 36 49 44 27 79 40 77 121 144 170 283 377 1056      22   180      8.41 sec
+SBY 21:01:35 [logs/formal_pdr_d4_probe] engine_0: 27 : ... 39 33 36 36 49 44 27 79 40 77 121 144 149 149 361 439 1138     30   180      9.20 sec
+SBY 21:01:36 [logs/formal_pdr_d4_probe] engine_0: 28 : ... 33 36 36 49 44 27 79 40 77 121 141 143 75 188 277 396 1101     24   180      9.73 sec
+SBY 21:01:36 [logs/formal_pdr_d4_probe] engine_0: 29 : ... 36 36 49 44 27 79 40 77 121 141 143 77 151 178 412 454 1170    34   180     10.59 sec
+SBY 21:01:37 [logs/formal_pdr_d4_probe] engine_0: 30 : ... 36 49 44 27 79 40 77 121 141 143 69 140 77 158 239 394 1313    48   180     11.37 sec
+SBY 21:01:38 [logs/formal_pdr_d4_probe] engine_0: 31 : ... 44 27 79 40 77 121 141 143 69 140 75 145 117 231 464 1265      20   180     12.02 sec
+SBY 21:01:39 [logs/formal_pdr_d4_probe] engine_0: 32 : ... 27 79 40 77 121 141 143 69 140 73 125 95 155 295 389 1248      44   180     12.71 sec
+SBY 21:01:39 [logs/formal_pdr_d4_probe] engine_0: 33 : ... 27 79 40 77 121 141 143 69 140 73 125 36 58 55 174 476 1242    21   180     13.27 sec
+SBY 21:01:40 [logs/formal_pdr_d4_probe] engine_0: 34 : ... 40 77 121 141 143 69 140 73 125 36 58 42 174 508 393 1127      24   180     13.92 sec
+SBY 21:01:40 [logs/formal_pdr_d4_probe] engine_0: 35 : ... 40 77 121 141 143 69 140 73 125 36 58 25 81 53 101 130 1604     0   180     14.43 sec
+SBY 21:01:41 [logs/formal_pdr_d4_probe] engine_0: 36 : ... 121 141 143 69 140 73 123 32 58 25 81 53 101 130 456 1183       1   180     14.98 sec
+SBY 21:01:43 [logs/formal_pdr_d4_probe] engine_0: 37 : ... 141 143 69 140 73 123 32 58 25 81 54 120 199 584 450 1197      89   180     16.74 sec
+SBY 21:01:44 [logs/formal_pdr_d4_probe] engine_0: 38 : ... 141 143 69 140 73 123 32 58 25 81 38 21 18 9 73 135 1843       10   180     17.72 sec
+SBY 21:01:44 [logs/formal_pdr_d4_probe] engine_0: 39 : ... 141 143 69 140 73 123 32 58 25 81 36 17 4 2 21 69 232 1716      1   180     18.19 sec
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: 40 : ... 143 69 140 73 123 32 58 25 81 36 17 4 2 23 71 248 168 1634     17   180     18.67 sec
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: 41 : ... 141 143 69 140 73 123 32 58 25 81 36 17 4 2 0 0 0 0 0 2034      0   180     19.11 sec
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Invariant F[36] : 2034 clauses with 180 flops (out of 193) (cex = 0, ave = 16.18)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Verification of invariant with 2034 clauses was successful.  Time =     0.07 sec
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Block = 1110  Oblig = 12841  Clause =  8935  Call =192829 (sat=58.3%)  Cex =   0  Start = 613
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: SAT solving =    15.22 sec ( 79.29 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: unsat     =     4.40 sec ( 22.93 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: sat       =    10.82 sec ( 56.36 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Generalize  =     7.73 sec ( 40.25 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Push clause =     9.01 sec ( 46.92 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Ternary sim =     0.16 sec (  0.84 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Containment =     0.10 sec (  0.53 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: CNF compute =     0.91 sec (  4.73 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Refinement  =     0.00 sec (  0.00 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: TOTAL       =    19.19 sec (100.00 %)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Property proved.  Time =    19.22 sec
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Counter-example is not available.
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: finished (returncode=0)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] engine_0: Status returned by engine: PASS
+SBY 21:01:45 [logs/formal_pdr_d4_probe] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:21 (21)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:19 (19)
+SBY 21:01:45 [logs/formal_pdr_d4_probe] summary: engine_0 (abc pdr) returned PASS
+SBY 21:01:45 [logs/formal_pdr_d4_probe] summary: engine_0 did not produce any traces
+SBY 21:01:45 [logs/formal_pdr_d4_probe] DONE (PASS, rc=0)

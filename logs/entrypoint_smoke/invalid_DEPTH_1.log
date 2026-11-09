@@ -1,0 +1,5 @@
+$ vvp build/invalid_DEPTH_1.vvp
+FATAL: rtl/sync_fifo.sv:63: DEPTH must be a power of two >= 2
+       Time: 0  Scope: sync_fifo
+
+EXIT_STATUS=1

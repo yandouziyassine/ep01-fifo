@@ -1,0 +1,227 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "verilator_version",
+      "command": [
+        "verilator",
+        "--version"
+      ],
+      "environment": {},
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true
+    },
+    {
+      "name": "iverilog_version",
+      "command": [
+        "iverilog",
+        "-V"
+      ],
+      "environment": {},
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true
+    },
+    {
+      "name": "python_version",
+      "command": [
+        "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/build/venv/bin/python",
+        "--version"
+      ],
+      "environment": {},
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true
+    },
+    {
+      "name": "lint_w1_d2",
+      "command": [
+        "verilator",
+        "--lint-only",
+        "--Wall",
+        "--top-module",
+        "async_fifo",
+        "-GDATA_WIDTH=1",
+        "-GDEPTH=2",
+        "rtl/async_fifo.sv"
+      ],
+      "environment": {},
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true
+    },
+    {
+      "name": "lint_w8_d16",
+      "command": [
+        "verilator",
+        "--lint-only",
+        "--Wall",
+        "--top-module",
+        "async_fifo",
+        "-GDATA_WIDTH=8",
+        "-GDEPTH=16",
+        "rtl/async_fifo.sv"
+      ],
+      "environment": {},
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true
+    },
+    {
+      "name": "lint_w32_d64",
+      "command": [
+        "verilator",
+        "--lint-only",
+        "--Wall",
+        "--top-module",
+        "async_fifo",
+        "-GDATA_WIDTH=32",
+        "-GDEPTH=64",
+        "rtl/async_fifo.sv"
+      ],
+      "environment": {},
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true
+    },
+    {
+      "name": "sim_w8_d16_wp10000_rp14000_p0_s1_n400",
+      "command": [
+        "make",
+        "-s",
+        "-f",
+        "tb/cocotb/Makefile",
+        "DATA_WIDTH=8",
+        "DEPTH=16",
+        "SIM_BUILD=build/async_w8_d16",
+        "COCOTB_RESULTS_FILE=/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_integration_smoke/sim_w8_d16_wp10000_rp14000_p0_s1_n400.xml"
+      ],
+      "environment": {
+        "FIFO_DEPTH": "16",
+        "FIFO_SEED": "1",
+        "FIFO_EVENTS": "400",
+        "WR_PERIOD_PS": "10000",
+        "RD_PERIOD_PS": "14000",
+        "RD_PHASE_PS": "0",
+        "FIFO_COVERAGE_FILE": "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_integration_smoke/sim_w8_d16_wp10000_rp14000_p0_s1_n400.json",
+        "COCOTB_RANDOM_SEED": "1"
+      },
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true,
+      "coverage": {
+        "seed": 1,
+        "width": 8,
+        "depth": 16,
+        "wr_period_ps": 10000,
+        "rd_period_ps": 14000,
+        "phase_ps": 0,
+        "random_events": 400,
+        "events": 1759,
+        "write_edges": 560,
+        "read_edges": 372,
+        "writes": 161,
+        "reads": 137,
+        "rejected_writes": 56,
+        "rejected_reads": 41,
+        "collisions": 75,
+        "concurrent_accepts": 3,
+        "resets": 4,
+        "peak": 16
+      }
+    },
+    {
+      "name": "compile_invalid_DEPTH_1",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "async_fifo",
+        "-Pasync_fifo.DEPTH=1",
+        "-o",
+        "build/async_invalid_DEPTH_1.vvp",
+        "rtl/async_fifo.sv"
+      ],
+      "environment": {},
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true
+    },
+    {
+      "name": "invalid_DEPTH_1",
+      "command": [
+        "vvp",
+        "build/async_invalid_DEPTH_1.vvp"
+      ],
+      "environment": {},
+      "exit_status": 1,
+      "expected_rejection": true,
+      "passed": true
+    },
+    {
+      "name": "compile_invalid_DEPTH_3",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "async_fifo",
+        "-Pasync_fifo.DEPTH=3",
+        "-o",
+        "build/async_invalid_DEPTH_3.vvp",
+        "rtl/async_fifo.sv"
+      ],
+      "environment": {},
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true
+    },
+    {
+      "name": "invalid_DEPTH_3",
+      "command": [
+        "vvp",
+        "build/async_invalid_DEPTH_3.vvp"
+      ],
+      "environment": {},
+      "exit_status": 1,
+      "expected_rejection": true,
+      "passed": true
+    },
+    {
+      "name": "compile_invalid_DATA_WIDTH_0",
+      "command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "async_fifo",
+        "-Pasync_fifo.DATA_WIDTH=0",
+        "-o",
+        "build/async_invalid_DATA_WIDTH_0.vvp",
+        "rtl/async_fifo.sv"
+      ],
+      "environment": {},
+      "exit_status": 0,
+      "expected_rejection": false,
+      "passed": true
+    },
+    {
+      "name": "invalid_DATA_WIDTH_0",
+      "command": [
+        "vvp",
+        "build/async_invalid_DATA_WIDTH_0.vvp"
+      ],
+      "environment": {},
+      "exit_status": 1,
+      "expected_rejection": true,
+      "passed": true
+    }
+  ],
+  "cocotb_version": "2.0.1",
+  "source_sha256": {
+    "rtl/async_fifo.sv": "c744bd6b39c5de1e839ee48e2d88370357345d4a06ec4be777b97f37cf8ee2d6",
+    "scripts/regress_async.py": "c87cd780c8f493f6efe0f2ce89412e65b18ab6596e25c86471148ae69474f6aa",
+    "requirements.txt": "c27c8783178476448d2a1c96529fb960e7cc5713aee76da610eefc19dfec1fe7",
+    "tb/cocotb/Makefile": "8ea990c23135c2bea2edf16b784a8bdd58be135d73004026882404635a4db721",
+    "tb/cocotb/test_async_fifo.py": "5c8fe938908950e90d1e2274a9c2856810c0db3de7d9c6336bc67605348c4c50"
+  }
+}

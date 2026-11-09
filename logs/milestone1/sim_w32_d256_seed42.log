@@ -1,0 +1,6 @@
+$ vvp build/w32_d256.vvp +SEED=42 +CYCLES=10000
+START width=32 depth=256 seed=42 random_cycles=10000
+PASS width=32 depth=256 seed=42 cycles=12320 writes=6306 reads=5892 overflow=2 underflow=148 both_full=1 both_empty=79 both_middle=2459 resets=13
+tb/tb_sync_fifo.sv:155: $finish called at 123596000 (1ps)
+
+EXIT_STATUS=0

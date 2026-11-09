@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-11-05T21:02:40" hostname="yassiney" package="async_fifo" id="0" name="cover_d2" tests="30" errors="0" failures="1" time="0" skipped="30">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="TIMEOUT"/>
+</properties>
+<testcase classname="cover_d2" name="build execution" time="0">
+<failure type="TIMEOUT" message="Task returned status TIMEOUT." />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:13.43-15.77" time="0" type="ASSERT" location="async_fifo_properties.svh:13.43-15.77" id="$assert$async_fifo_properties.svh:13$296">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:16.45-17.50" time="0" type="ASSERT" location="async_fifo_properties.svh:16.45-17.50" id="$assert$async_fifo_properties.svh:16$297">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:17.51-18.58" time="0" type="ASSERT" location="async_fifo_properties.svh:17.51-18.58" id="$assert$async_fifo_properties.svh:17$298">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:18.59-19.51" time="0" type="ASSERT" location="async_fifo_properties.svh:18.59-19.51" id="$assert$async_fifo_properties.svh:18$299">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:19.52-21.77" time="0" type="ASSERT" location="async_fifo_properties.svh:19.52-21.77" id="$assert$async_fifo_properties.svh:19$300">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:21.78-22.52" time="0" type="ASSERT" location="async_fifo_properties.svh:21.78-22.52" id="$assert$async_fifo_properties.svh:21$301">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:24.25-25.59" time="0" type="ASSERT" location="async_fifo_properties.svh:24.25-25.59" id="$assert$async_fifo_properties.svh:24$302">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:25.60-26.55" time="0" type="ASSERT" location="async_fifo_properties.svh:25.60-26.55" id="$assert$async_fifo_properties.svh:25$303">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:27.8-28.51" time="0" type="ASSERT" location="async_fifo_properties.svh:27.8-28.51" id="$assert$async_fifo_properties.svh:27$304">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:35.42-36.77" time="0" type="ASSERT" location="async_fifo_properties.svh:35.42-36.77" id="$assert$async_fifo_properties.svh:35$308">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:37.46-38.50" time="0" type="ASSERT" location="async_fifo_properties.svh:37.46-38.50" id="$assert$async_fifo_properties.svh:37$309">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:38.51-39.58" time="0" type="ASSERT" location="async_fifo_properties.svh:38.51-39.58" id="$assert$async_fifo_properties.svh:38$310">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:39.59-40.51" time="0" type="ASSERT" location="async_fifo_properties.svh:39.59-40.51" id="$assert$async_fifo_properties.svh:39$311">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:40.52-41.64" time="0" type="ASSERT" location="async_fifo_properties.svh:40.52-41.64" id="$assert$async_fifo_properties.svh:40$312">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:41.65-42.52" time="0" type="ASSERT" location="async_fifo_properties.svh:41.65-42.52" id="$assert$async_fifo_properties.svh:41$313">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:43.31-43.65" time="0" type="ASSERT" location="async_fifo_properties.svh:43.31-43.65" id="$assert$async_fifo_properties.svh:43$314">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:45.25-46.75" time="0" type="ASSERT" location="async_fifo_properties.svh:45.25-46.75" id="$assert$async_fifo_properties.svh:45$315">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:46.76-47.55" time="0" type="ASSERT" location="async_fifo_properties.svh:46.76-47.55" id="$assert$async_fifo_properties.svh:46$316">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:48.8-49.52" time="0" type="ASSERT" location="async_fifo_properties.svh:48.8-49.52" id="$assert$async_fifo_properties.svh:48$317">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:60.31-61.44" time="0" type="ASSERT" location="async_fifo_properties.svh:60.31-61.44" id="$assert$async_fifo_properties.svh:60$321">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:62.19-62.70" time="0" type="ASSERT" location="async_fifo_properties.svh:62.19-62.70" id="$assert$async_fifo_properties.svh:62$322">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:63.19-63.86" time="0" type="ASSERT" location="async_fifo_properties.svh:63.19-63.86" id="$assert$async_fifo_properties.svh:63$323">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:66.32-66.71" time="0" type="ASSERT" location="async_fifo_properties.svh:66.32-66.71" id="$assert$async_fifo_properties.svh:66$324">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property ASSERT in async_fifo_formal/dut at async_fifo_properties.svh:68.32-68.55" time="0" type="ASSERT" location="async_fifo_properties.svh:68.32-68.55" id="$assert$async_fifo_properties.svh:68$325">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property COVER in async_fifo_formal/dut at async_fifo_properties.svh:28.52-29.33" time="0" type="COVER" location="async_fifo_properties.svh:28.52-29.33" id="$cover$async_fifo_properties.svh:28$305">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property COVER in async_fifo_formal/dut at async_fifo_properties.svh:29.34-30.40" time="0" type="COVER" location="async_fifo_properties.svh:29.34-30.40" id="$cover$async_fifo_properties.svh:29$306">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property COVER in async_fifo_formal/dut at async_fifo_properties.svh:30.41-31.71" time="0" type="COVER" location="async_fifo_properties.svh:30.41-31.71" id="$cover$async_fifo_properties.svh:30$307">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property COVER in async_fifo_formal/dut at async_fifo_properties.svh:49.53-50.33" time="0" type="COVER" location="async_fifo_properties.svh:49.53-50.33" id="$cover$async_fifo_properties.svh:49$318">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property COVER in async_fifo_formal/dut at async_fifo_properties.svh:50.34-51.41" time="0" type="COVER" location="async_fifo_properties.svh:50.34-51.41" id="$cover$async_fifo_properties.svh:50$319">
+<skipped />
+</testcase>
+<testcase classname="cover_d2" name="Property COVER in async_fifo_formal/dut at async_fifo_properties.svh:51.42-52.71" time="0" type="COVER" location="async_fifo_properties.svh:51.42-52.71" id="$cover$async_fifo_properties.svh:51$320">
+<skipped />
+</testcase>
+<system-out>SBY 21:01:10 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/rtl/async_fifo.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2/src/async_fifo.sv'.
+SBY 21:01:10 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_properties.svh' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2/src/async_fifo_properties.svh'.
+SBY 21:01:10 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_formal.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2/src/async_fifo_formal.sv'.
+SBY 21:01:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] engine_0: smtbmc z3
+SBY 21:01:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] base: starting process &quot;cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 21:01:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] base: Warning: Encountered `translate_off' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using a portable and standards-compliant construct such as `ifdef is recommended!
+SBY 21:01:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] base: finished (returncode=0)
+SBY 21:01:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] prep: starting process &quot;cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 21:01:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] prep: finished (returncode=0)
+SBY 21:01:11 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] smt2: starting process &quot;cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 21:01:12 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] smt2: finished (returncode=0)
+SBY 21:01:12 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] engine_0: starting process &quot;cd /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2; yosys-smtbmc -s z3 --presat -c --noprogress -t 64  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 21:01:12 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] engine_0: ##   0:00:00  Solver: z3
+SBY 21:01:17 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] engine_0: ##   0:00:04  Checking cover reachability in step 0..
+SBY 21:02:15 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] engine_0: ##   0:01:03  waiting for solver (1 minute)
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] Reached TIMEOUT (90 seconds). Terminating all subprocesses.
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] engine_0: terminating process
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary: Elapsed clock time [H:MM:SS (secs)]: 0:01:31 (91)
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary: engine_0 (smtbmc z3) did not return a status
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary: engine_0 did not produce any traces
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary: unreached cover statements:
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary:   async_fifo_formal.dut.$cover$async_fifo_properties.svh:28$305 at async_fifo_properties.svh:28.52-29.33
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary:   async_fifo_formal.dut.$cover$async_fifo_properties.svh:29$306 at async_fifo_properties.svh:29.34-30.40
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary:   async_fifo_formal.dut.$cover$async_fifo_properties.svh:30$307 at async_fifo_properties.svh:30.41-31.71
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary:   async_fifo_formal.dut.$cover$async_fifo_properties.svh:49$318 at async_fifo_properties.svh:49.53-50.33
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary:   async_fifo_formal.dut.$cover$async_fifo_properties.svh:50$319 at async_fifo_properties.svh:50.34-51.41
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary:   and 1 further property
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] summary: see /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2/TIMEOUT for a complete summary
+SBY 21:02:40 [/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/cover_d2] DONE (TIMEOUT, rc=8)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

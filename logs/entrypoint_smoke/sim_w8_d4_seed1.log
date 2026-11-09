@@ -1,0 +1,6 @@
+$ vvp build/w8_d4.vvp +SEED=1 +CYCLES=1
+START width=8 depth=4 seed=1 random_cycles=1
+PASS width=8 depth=4 seed=1 cycles=48 writes=25 reads=20 overflow=2 underflow=3 both_full=1 both_empty=1 both_middle=1 resets=3
+tb/tb_sync_fifo.sv:155: $finish called at 576000 (1ps)
+
+EXIT_STATUS=0

@@ -1,0 +1,6 @@
+$ vvp build/async_invalid_DEPTH_3.vvp
+ENV={}
+FATAL: rtl/async_fifo.sv:99: DEPTH must be a power of two >= 2
+       Time: 0  Scope: async_fifo
+
+EXIT_STATUS=1

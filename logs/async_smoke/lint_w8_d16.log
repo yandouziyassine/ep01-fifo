@@ -1,0 +1,4 @@
+$ verilator --lint-only --Wall --top-module async_fifo -GDATA_WIDTH=8 -GDEPTH=16 rtl/async_fifo.sv
+ENV={}
+
+EXIT_STATUS=0

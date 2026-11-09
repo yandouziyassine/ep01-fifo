@@ -1,0 +1,141 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \async_fifo_formal
+Used module:     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo
+
+2.2. Analyzing design hierarchy..
+Top module:  \async_fifo_formal
+Used module:     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo
+Removed 0 unused modules.
+Module async_fifo_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+Module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== async_fifo_formal ===
+
+   Number of wires:                 18
+   Number of wire bits:             20
+   Number of public wires:          14
+   Number of public wire bits:      16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 15
+     $anyinit                        1
+     $anyseq                         7
+     $assume                         1
+     $ff                             2
+     $logic_not                      1
+     $mux                            2
+     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo      1
+
+=== $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo ===
+
+   Number of wires:                535
+   Number of wire bits:            715
+   Number of public wires:         123
+   Number of public wire bits:     152
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                506
+     $add                            6
+     $anyinit                       68
+     $anyseq                        33
+     $assert                        30
+     $cover                          6
+     $eq                            19
+     $eqx                            7
+     $ff                            97
+     $gt                             1
+     $le                             3
+     $logic_and                     25
+     $logic_not                     19
+     $logic_or                       4
+     $lt                             1
+     $mem_v2                         1
+     $mux                          175
+     $not                            4
+     $sub                            1
+     $xor                            6
+
+=== design hierarchy ===
+
+   async_fifo_formal                 1
+     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo      1
+
+   Number of wires:                553
+   Number of wire bits:            735
+   Number of public wires:         137
+   Number of public wire bits:     168
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                520
+     $add                            6
+     $anyinit                       69
+     $anyseq                        40
+     $assert                        30
+     $assume                         1
+     $cover                          6
+     $eq                            19
+     $eqx                            7
+     $ff                            99
+     $gt                             1
+     $le                             3
+     $logic_and                     25
+     $logic_not                     20
+     $logic_or                       4
+     $lt                             1
+     $mem_v2                         1
+     $mux                          177
+     $not                            4
+     $sub                            1
+     $xor                            6
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Creating SMT-LIBv2 representation of module async_fifo_formal.
+
+End of script. Logfile hash: df677d45ac, CPU: user 0.01s system 0.01s, MEM: 13.70 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 52% 2x write_smt2 (0 sec), 40% 2x read_ilang (0 sec), ...

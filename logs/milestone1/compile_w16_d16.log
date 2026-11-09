@@ -1,0 +1,3 @@
+$ iverilog -g2012 -Wall -s tb_sync_fifo -Ptb_sync_fifo.DATA_WIDTH=16 -Ptb_sync_fifo.DEPTH=16 -o build/w16_d16.vvp rtl/sync_fifo.sv tb/tb_sync_fifo.sv
+
+EXIT_STATUS=0

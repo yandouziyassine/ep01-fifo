@@ -1,0 +1,6 @@
+$ vvp build/w1_d2.vvp +SEED=1 +CYCLES=10000
+START width=1 depth=2 seed=1 random_cycles=10000
+PASS width=1 depth=2 seed=1 cycles=10029 writes=3791 reads=3782 overflow=1292 underflow=1239 both_full=648 both_empty=611 both_middle=1262 resets=13
+tb/tb_sync_fifo.sv:155: $finish called at 100686000 (1ps)
+
+EXIT_STATUS=0

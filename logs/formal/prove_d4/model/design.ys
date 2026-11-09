@@ -1,0 +1,8 @@
+# running in /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4/src/
+read -formal -sv async_fifo.sv async_fifo_formal.sv
+chparam -set DEPTH 4 async_fifo_formal
+prep -top async_fifo_formal
+
+hierarchy -smtcheck
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

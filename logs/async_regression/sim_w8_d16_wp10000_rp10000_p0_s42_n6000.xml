@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="42" />
+    <testcase name="fifo_integrity" classname="test_async_fifo" file="/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/tb/cocotb/test_async_fifo.py" lineno="160" time="0.4690070152282715" sim_time_ns="34805.001" ratio_time="74209.97953103106" />
+  </testsuite>
+</testsuites>

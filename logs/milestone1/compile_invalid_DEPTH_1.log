@@ -1,0 +1,3 @@
+$ iverilog -g2012 -s sync_fifo -Psync_fifo.DEPTH=1 -o build/invalid_DEPTH_1.vvp rtl/sync_fifo.sv
+
+EXIT_STATUS=0

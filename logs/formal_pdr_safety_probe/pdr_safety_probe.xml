@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-11-05T21:01:08" hostname="yassiney" package="pdr_safety_probe" id="0" name="default" tests="1" errors="0" failures="0" time="5" skipped="0">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="default" name="default" time="5">
+</testcase>
+<system-out>SBY 21:01:02 [logs/formal_pdr_safety_probe] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/rtl/async_fifo.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_pdr_safety_probe/src/async_fifo.sv'.
+SBY 21:01:02 [logs/formal_pdr_safety_probe] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_properties.svh' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_pdr_safety_probe/src/async_fifo_properties.svh'.
+SBY 21:01:02 [logs/formal_pdr_safety_probe] Copy '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/formal/async_fifo_formal.sv' to '/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_pdr_safety_probe/src/async_fifo_formal.sv'.
+SBY 21:01:02 [logs/formal_pdr_safety_probe] engine_0: abc pdr
+SBY 21:01:02 [logs/formal_pdr_safety_probe] base: starting process &quot;cd logs/formal_pdr_safety_probe/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 21:01:02 [logs/formal_pdr_safety_probe] base: Warning: Encountered `translate_off' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using a portable and standards-compliant construct such as `ifdef is recommended!
+SBY 21:01:02 [logs/formal_pdr_safety_probe] base: finished (returncode=0)
+SBY 21:01:02 [logs/formal_pdr_safety_probe] prep: starting process &quot;cd logs/formal_pdr_safety_probe/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 21:01:02 [logs/formal_pdr_safety_probe] prep: finished (returncode=0)
+SBY 21:01:02 [logs/formal_pdr_safety_probe] aig: starting process &quot;cd logs/formal_pdr_safety_probe/model; yosys -ql design_aiger.log design_aiger.ys&quot;
+SBY 21:01:03 [logs/formal_pdr_safety_probe] aig: finished (returncode=0)
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: starting process &quot;cd logs/formal_pdr_safety_probe; yosys-abc -c 'read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw'&quot;
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: ABC command line: &quot;read_aiger model/design_aiger.aig; fold; strash; pdr -v -I engine_0/invariants.pla; write_cex -a engine_0/trace.aiw&quot;.
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: Warning: The last output is interpreted as a constraint.
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: VarMax = 300. FrameMax = 10000. QueMax = 0. TimeMax = 0. MonoCNF = no. SkipGen = no. SolveAll = no.
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: Frame Clauses                                                     Max Queue Flops Cex      Time
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 1 : 0 29                                                                1    30      0.01 sec
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 2 : 0 15 55                                                             1    45      0.02 sec
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 3 : 0 15 57 95                                                          9    81      0.05 sec
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 4 : 0 15 33 47 166                                                      3   130      0.10 sec
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 5 : 0 15 33 46 93 169                                                   3   143      0.15 sec
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 6 : 0 15 36 53 52 56 227                                               13   145      0.21 sec
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 7 : 0 15 29 50 45 38 49 278                                            32   148      0.27 sec
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 8 : 0 15 29 48 33 12 8 16 278                                           3   148      0.30 sec
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 9 : 0 15 29 48 33 12 16 22 41 337                                      32   150      0.36 sec
+SBY 21:01:03 [logs/formal_pdr_safety_probe] engine_0: 10 : 0 15 29 48 33 12 6 11 3 28 337                                      1   151      0.39 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 11 : 0 15 29 48 33 12 10 15 14 50 56 410                                27   151      0.50 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 12 : 0 15 29 48 33 12 6 11 5 21 6 37 382                                 1   151      0.54 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 13 : 0 15 29 48 33 12 6 11 6 24 11 45 58 435                            12   152      0.62 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 14 : 0 15 29 48 33 12 6 11 5 21 8 30 25 33 462                          22   154      0.69 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 15 : 0 15 29 48 33 12 6 11 5 21 6 20 12 8 14 462                         3   154      0.72 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 16 : 0 15 29 48 33 12 6 11 5 21 8 26 17 32 44 40 553                    23   154      0.86 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 17 : 0 15 29 48 33 12 6 11 5 21 8 24 12 4 13 2 57 538                    1   154      0.92 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 18 : 0 15 29 48 33 12 6 11 5 21 8 24 12 8 19 14 79 133 521              26   154      1.06 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 19 : 0 15 29 48 33 12 6 11 5 21 8 24 12 4 11 2 39 54 93 493              3   154      1.14 sec
+SBY 21:01:04 [logs/formal_pdr_safety_probe] engine_0: 20 : 0 15 29 48 33 12 6 11 5 21 8 24 12 4 11 3 40 51 118 125 553        30   154      1.34 sec
+SBY 21:01:05 [logs/formal_pdr_safety_probe] engine_0: 21 : ... 15 29 48 33 12 6 11 5 21 8 24 12 4 11 2 39 22 75 69 78 653     39   154      1.53 sec
+SBY 21:01:05 [logs/formal_pdr_safety_probe] engine_0: 22 : ... 29 48 33 12 6 11 5 21 8 24 12 4 11 2 39 20 41 20 10 97 598      1   154      1.61 sec
+SBY 21:01:05 [logs/formal_pdr_safety_probe] engine_0: 23 : ... 48 33 12 6 11 5 21 8 24 12 4 11 2 39 20 41 20 13 104 99 578    12   154      1.72 sec
+SBY 21:01:05 [logs/formal_pdr_safety_probe] engine_0: 24 : ... 33 12 6 11 5 21 8 24 12 4 11 2 39 20 41 20 10 47 43 110 594     9   154      1.82 sec
+SBY 21:01:05 [logs/formal_pdr_safety_probe] engine_0: 25 : ... 6 11 5 21 8 24 12 4 11 2 39 20 41 21 12 49 27 141 174 587      38   154      2.06 sec
+SBY 21:01:05 [logs/formal_pdr_safety_probe] engine_0: 26 : ... 6 11 5 21 8 24 12 4 11 2 39 20 39 20 10 47 9 83 69 164 555      8   154      2.20 sec
+SBY 21:01:06 [logs/formal_pdr_safety_probe] engine_0: 27 : ... 5 21 8 24 12 4 11 2 39 20 39 20 10 47 11 85 88 176 211 630     39   154      2.56 sec
+SBY 21:01:06 [logs/formal_pdr_safety_probe] engine_0: 28 : ... 5 21 8 24 12 4 11 2 39 20 39 20 10 47 7 72 27 52 103 95 848    50   154      2.88 sec
+SBY 21:01:06 [logs/formal_pdr_safety_probe] engine_0: 29 : ... 8 24 12 4 11 2 39 20 39 20 10 47 7 72 27 31 40 34 143 768       1   154      3.01 sec
+SBY 21:01:06 [logs/formal_pdr_safety_probe] engine_0: 30 : ... 24 12 4 11 2 39 20 39 20 10 47 7 72 27 35 54 52 181 173 722    71   154      3.29 sec
+SBY 21:01:07 [logs/formal_pdr_safety_probe] engine_0: 31 : ... 24 12 4 11 2 39 20 39 20 10 47 7 72 27 25 23 4 23 4 40 965      0   154      3.43 sec
+SBY 21:01:07 [logs/formal_pdr_safety_probe] engine_0: 32 : ... 12 4 11 2 39 20 39 20 10 47 7 72 27 25 23 4 23 4 40 105 866     1   154      3.53 sec
+SBY 21:01:07 [logs/formal_pdr_safety_probe] engine_0: 33 : ... 11 2 39 20 39 20 10 47 7 72 27 25 23 4 23 4 40 109 118 766      7   154      3.64 sec
+SBY 21:01:07 [logs/formal_pdr_safety_probe] engine_0: 34 : ... 2 39 20 39 20 10 47 7 72 27 25 23 4 23 4 30 51 57 131 757       1   154      3.76 sec
+SBY 21:01:07 [logs/formal_pdr_safety_probe] engine_0: 35 : ... 39 20 39 20 10 47 7 72 27 25 23 4 23 4 30 52 72 157 172 658    22   154      3.95 sec
+SBY 21:01:07 [logs/formal_pdr_safety_probe] engine_0: 36 : ... 20 39 20 10 47 7 72 27 25 23 4 23 4 30 39 14 37 80 128 738      1   154      4.08 sec
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: 37 : ... 39 20 10 47 7 72 27 25 23 4 23 4 30 39 18 45 99 166 138 705    29   154      4.31 sec
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: 38 : ... 20 39 20 10 47 7 72 27 25 23 4 23 4 30 39 7 4 3 2 6 35 972      0   154      4.47 sec
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: 39 : ... 39 20 10 47 7 72 27 25 23 4 23 4 30 39 7 4 3 2 6 35 103 876     1   154      4.57 sec
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: 40 : ... 20 10 47 7 72 27 25 23 4 23 4 30 39 7 4 3 2 7 36 114 77 846    13   154      4.71 sec
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: 41 : ... 20 10 47 7 72 27 25 23 4 23 4 30 39 7 4 3 2 0 0 0 0 0 1019      0   154      4.82 sec
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Invariant F[36] : 1019 clauses with 154 flops (out of 162) (cex = 0, ave = 13.84)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Verification of invariant with 1019 clauses was successful.  Time =     0.03 sec
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Block =  609  Oblig =  5233  Clause =  3567  Call = 79181 (sat=52.0%)  Cex =   0  Start = 237
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: SAT solving =     3.72 sec ( 76.48 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: unsat     =     1.07 sec ( 21.93 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: sat       =     2.65 sec ( 54.55 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Generalize  =     1.75 sec ( 35.96 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Push clause =     2.33 sec ( 47.91 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Ternary sim =     0.05 sec (  1.11 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Containment =     0.02 sec (  0.44 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: CNF compute =     0.22 sec (  4.45 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Refinement  =     0.00 sec (  0.00 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: TOTAL       =     4.86 sec (100.00 %)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Property proved.  Time =     4.87 sec
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Counter-example is not available.
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: finished (returncode=0)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] engine_0: Status returned by engine: PASS
+SBY 21:01:08 [logs/formal_pdr_safety_probe] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:06 (6)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:05 (5)
+SBY 21:01:08 [logs/formal_pdr_safety_probe] summary: engine_0 (abc pdr) returned PASS
+SBY 21:01:08 [logs/formal_pdr_safety_probe] summary: engine_0 did not produce any traces
+SBY 21:01:08 [logs/formal_pdr_safety_probe] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

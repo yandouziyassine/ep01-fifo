@@ -1,0 +1,3 @@
+$ verilator --lint-only --Wall --top-module sync_fifo -GDATA_WIDTH=8 -GDEPTH=4 rtl/sync_fifo.sv
+
+EXIT_STATUS=0

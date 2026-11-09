@@ -1,0 +1,12 @@
+init 31 0 dut.mem[1]
+init 32 1 dut.mem[1]
+init 33 0 dut.mem[0]
+init 34 1 dut.mem[0]
+init 35 0 _witness_.anyinit_procdff_517
+latch 0 0 dut.mem[1]
+latch 1 1 dut.mem[1]
+latch 2 0 dut.mem[0]
+latch 3 1 dut.mem[0]
+latch 5 0 _witness_.anyinit_procdff_517
+latch 6 0 initialized
+ninitff 152

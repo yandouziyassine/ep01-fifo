@@ -1,0 +1,6 @@
+build/
+*.vcd
+__pycache__/
+logs/synthesis_initial_bad_reports/
+logs/synthesis_second_bad_reports/
+logs/synthesis_third_bad_stat_json/

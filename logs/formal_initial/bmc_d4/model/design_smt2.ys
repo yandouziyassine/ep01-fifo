@@ -1,0 +1,7 @@
+# running in /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal_initial/bmc_d4/model/
+read_ilang design_prep.il
+hierarchy -smtcheck
+formalff -assume
+dffunmap
+stat
+write_smt2 -wires design_smt2.smt2

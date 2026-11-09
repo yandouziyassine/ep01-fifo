@@ -1,0 +1,552 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "name": "yosys_version",
+      "command": [
+        "yosys",
+        "-V"
+      ],
+      "exit_status": 0
+    },
+    {
+      "name": "inspect_sync_w1_d2",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/sync_fifo.sv; chparam -set DATA_WIDTH 1 -set DEPTH 2 sync_fifo; hierarchy -top sync_fifo; proc; memory_collect; opt; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 28,
+        "wire_bits": 32,
+        "public_wires": 13,
+        "public_wire_bits": 14,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 23,
+        "cell_types": {
+          "$adffe": 4,
+          "$eq": 3,
+          "$logic_and": 3,
+          "$logic_not": 3,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$pmux": 1,
+          "$reduce_bool": 1,
+          "$sub": 1
+        }
+      }
+    },
+    {
+      "name": "synth_sync_w1_d2",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/sync_fifo.sv; chparam -set DATA_WIDTH 1 -set DEPTH 2 sync_fifo; hierarchy -top sync_fifo; synth -top sync_fifo; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 25,
+        "wire_bits": 27,
+        "public_wires": 15,
+        "public_wire_bits": 16,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 22,
+        "cell_types": {
+          "$_DFFE_PN0P_": 5,
+          "$_DFFE_PP_": 2,
+          "$_MUX_": 1,
+          "$_NAND_": 1,
+          "$_NOR_": 1,
+          "$_NOT_": 3,
+          "$_ORNOT_": 1,
+          "$_XOR_": 3
+        }
+      },
+      "tag": "sync_w1_d2",
+      "top": "sync_fifo",
+      "data_width": 1,
+      "depth": 2,
+      "pre_mapping_memory_statistics": {
+        "wires": 28,
+        "wire_bits": 32,
+        "public_wires": 13,
+        "public_wire_bits": 14,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 23,
+        "cell_types": {
+          "$adffe": 4,
+          "$eq": 3,
+          "$logic_and": 3,
+          "$logic_not": 3,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$pmux": 1,
+          "$reduce_bool": 1,
+          "$sub": 1
+        }
+      }
+    },
+    {
+      "name": "inspect_sync_w8_d16",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/sync_fifo.sv; chparam -set DATA_WIDTH 8 -set DEPTH 16 sync_fifo; hierarchy -top sync_fifo; proc; memory_collect; opt; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 28,
+        "wire_bits": 94,
+        "public_wires": 13,
+        "public_wire_bits": 37,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 23,
+        "cell_types": {
+          "$adffe": 4,
+          "$eq": 3,
+          "$logic_and": 3,
+          "$logic_not": 3,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$pmux": 1,
+          "$reduce_bool": 1,
+          "$sub": 1
+        }
+      }
+    },
+    {
+      "name": "synth_sync_w8_d16",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/sync_fifo.sv; chparam -set DATA_WIDTH 8 -set DEPTH 16 sync_fifo; hierarchy -top sync_fifo; synth -top sync_fifo; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 214,
+        "wire_bits": 373,
+        "public_wires": 29,
+        "public_wire_bits": 165,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 353,
+        "cell_types": {
+          "$_AND_": 5,
+          "$_DFFE_PN0P_": 21,
+          "$_DFFE_PP_": 128,
+          "$_MUX_": 120,
+          "$_NAND_": 5,
+          "$_NOR_": 2,
+          "$_NOT_": 5,
+          "$_ORNOT_": 12,
+          "$_OR_": 13,
+          "$_XNOR_": 4,
+          "$_XOR_": 10
+        }
+      },
+      "tag": "sync_w8_d16",
+      "top": "sync_fifo",
+      "data_width": 8,
+      "depth": 16,
+      "pre_mapping_memory_statistics": {
+        "wires": 28,
+        "wire_bits": 94,
+        "public_wires": 13,
+        "public_wire_bits": 37,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 23,
+        "cell_types": {
+          "$adffe": 4,
+          "$eq": 3,
+          "$logic_and": 3,
+          "$logic_not": 3,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$pmux": 1,
+          "$reduce_bool": 1,
+          "$sub": 1
+        }
+      }
+    },
+    {
+      "name": "inspect_sync_w32_d64",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/sync_fifo.sv; chparam -set DATA_WIDTH 32 -set DEPTH 64 sync_fifo; hierarchy -top sync_fifo; proc; memory_collect; opt; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 28,
+        "wire_bits": 232,
+        "public_wires": 13,
+        "public_wire_bits": 91,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 23,
+        "cell_types": {
+          "$adffe": 4,
+          "$eq": 3,
+          "$logic_and": 3,
+          "$logic_not": 3,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$pmux": 1,
+          "$reduce_bool": 1,
+          "$sub": 1
+        }
+      }
+    },
+    {
+      "name": "synth_sync_w32_d64",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/sync_fifo.sv; chparam -set DATA_WIDTH 32 -set DEPTH 64 sync_fifo; hierarchy -top sync_fifo; synth -top sync_fifo; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 2269,
+        "wire_bits": 4388,
+        "public_wires": 77,
+        "public_wire_bits": 2139,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 4340,
+        "cell_types": {
+          "$_AND_": 6,
+          "$_DFFE_PN0P_": 51,
+          "$_DFFE_PP_": 2048,
+          "$_MUX_": 2016,
+          "$_NAND_": 9,
+          "$_NOR_": 6,
+          "$_NOT_": 7,
+          "$_ORNOT_": 5,
+          "$_OR_": 87,
+          "$_XNOR_": 6,
+          "$_XOR_": 17
+        }
+      },
+      "tag": "sync_w32_d64",
+      "top": "sync_fifo",
+      "data_width": 32,
+      "depth": 64,
+      "pre_mapping_memory_statistics": {
+        "wires": 28,
+        "wire_bits": 232,
+        "public_wires": 13,
+        "public_wire_bits": 91,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 23,
+        "cell_types": {
+          "$adffe": 4,
+          "$eq": 3,
+          "$logic_and": 3,
+          "$logic_not": 3,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$pmux": 1,
+          "$reduce_bool": 1,
+          "$sub": 1
+        }
+      }
+    },
+    {
+      "name": "inspect_async_w1_d2",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/async_fifo.sv; chparam -set DATA_WIDTH 1 -set DEPTH 2 async_fifo; hierarchy -top async_fifo; proc; memory_collect; opt; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 40,
+        "wire_bits": 55,
+        "public_wires": 29,
+        "public_wire_bits": 43,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 30,
+        "cell_types": {
+          "$adff": 12,
+          "$adffe": 1,
+          "$eq": 2,
+          "$logic_and": 4,
+          "$logic_not": 2,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$not": 1,
+          "$xor": 2
+        }
+      }
+    },
+    {
+      "name": "synth_async_w1_d2",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/async_fifo.sv; chparam -set DATA_WIDTH 1 -set DEPTH 2 async_fifo; hierarchy -top async_fifo; synth -top async_fifo; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 43,
+        "wire_bits": 58,
+        "public_wires": 30,
+        "public_wire_bits": 44,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 43,
+        "cell_types": {
+          "$_AND_": 3,
+          "$_DFFE_PN0P_": 1,
+          "$_DFFE_PP_": 2,
+          "$_DFF_PN0_": 19,
+          "$_DFF_PN1_": 1,
+          "$_MUX_": 1,
+          "$_NAND_": 1,
+          "$_NOR_": 1,
+          "$_XNOR_": 2,
+          "$_XOR_": 8
+        }
+      },
+      "tag": "async_w1_d2",
+      "top": "async_fifo",
+      "data_width": 1,
+      "depth": 2,
+      "pre_mapping_memory_statistics": {
+        "wires": 40,
+        "wire_bits": 55,
+        "public_wires": 29,
+        "public_wire_bits": 43,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 30,
+        "cell_types": {
+          "$adff": 12,
+          "$adffe": 1,
+          "$eq": 2,
+          "$logic_and": 4,
+          "$logic_not": 2,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$not": 1,
+          "$xor": 2
+        }
+      }
+    },
+    {
+      "name": "inspect_async_w8_d16",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/async_fifo.sv; chparam -set DATA_WIDTH 8 -set DEPTH 16 async_fifo; hierarchy -top async_fifo; proc; memory_collect; opt; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 40,
+        "wire_bits": 129,
+        "public_wires": 29,
+        "public_wire_bits": 93,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 30,
+        "cell_types": {
+          "$adff": 12,
+          "$adffe": 1,
+          "$eq": 2,
+          "$logic_and": 4,
+          "$logic_not": 2,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$not": 1,
+          "$xor": 2
+        }
+      }
+    },
+    {
+      "name": "synth_async_w8_d16",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/async_fifo.sv; chparam -set DATA_WIDTH 8 -set DEPTH 16 async_fifo; hierarchy -top async_fifo; synth -top async_fifo; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 241,
+        "wire_bits": 424,
+        "public_wires": 44,
+        "public_wire_bits": 220,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 403,
+        "cell_types": {
+          "$_AND_": 2,
+          "$_DFFE_PN0P_": 8,
+          "$_DFFE_PP_": 128,
+          "$_DFF_PN0_": 43,
+          "$_DFF_PN1_": 1,
+          "$_MUX_": 120,
+          "$_NAND_": 5,
+          "$_NOR_": 1,
+          "$_NOT_": 14,
+          "$_ORNOT_": 5,
+          "$_OR_": 20,
+          "$_XNOR_": 7,
+          "$_XOR_": 21
+        }
+      },
+      "tag": "async_w8_d16",
+      "top": "async_fifo",
+      "data_width": 8,
+      "depth": 16,
+      "pre_mapping_memory_statistics": {
+        "wires": 40,
+        "wire_bits": 129,
+        "public_wires": 29,
+        "public_wire_bits": 93,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 30,
+        "cell_types": {
+          "$adff": 12,
+          "$adffe": 1,
+          "$eq": 2,
+          "$logic_and": 4,
+          "$logic_not": 2,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$not": 1,
+          "$xor": 2
+        }
+      }
+    },
+    {
+      "name": "inspect_async_w32_d64",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/async_fifo.sv; chparam -set DATA_WIDTH 32 -set DEPTH 64 async_fifo; hierarchy -top async_fifo; proc; memory_collect; opt; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 40,
+        "wire_bits": 275,
+        "public_wires": 29,
+        "public_wire_bits": 165,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 30,
+        "cell_types": {
+          "$adff": 12,
+          "$adffe": 1,
+          "$eq": 2,
+          "$logic_and": 4,
+          "$logic_not": 2,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$not": 1,
+          "$xor": 2
+        }
+      }
+    },
+    {
+      "name": "synth_async_w32_d64",
+      "command": [
+        "yosys",
+        "-Q",
+        "-p",
+        "read_verilog -sv rtl/async_fifo.sv; chparam -set DATA_WIDTH 32 -set DEPTH 64 async_fifo; hierarchy -top async_fifo; synth -top async_fifo; stat"
+      ],
+      "exit_status": 0,
+      "statistics": {
+        "wires": 2300,
+        "wire_bits": 4451,
+        "public_wires": 92,
+        "public_wire_bits": 2212,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 4406,
+        "cell_types": {
+          "$_AND_": 3,
+          "$_DFFE_PN0P_": 32,
+          "$_DFFE_PP_": 2048,
+          "$_DFF_PN0_": 59,
+          "$_DFF_PN1_": 1,
+          "$_MUX_": 2016,
+          "$_NAND_": 6,
+          "$_NOT_": 25,
+          "$_ORNOT_": 5,
+          "$_OR_": 88,
+          "$_XNOR_": 11,
+          "$_XOR_": 31
+        }
+      },
+      "tag": "async_w32_d64",
+      "top": "async_fifo",
+      "data_width": 32,
+      "depth": 64,
+      "pre_mapping_memory_statistics": {
+        "wires": 40,
+        "wire_bits": 275,
+        "public_wires": 29,
+        "public_wire_bits": 165,
+        "memories": 0,
+        "memory_bits": 0,
+        "processes": 0,
+        "cells": 30,
+        "cell_types": {
+          "$adff": 12,
+          "$adffe": 1,
+          "$eq": 2,
+          "$logic_and": 4,
+          "$logic_not": 2,
+          "$mem_v2": 1,
+          "$mux": 3,
+          "$not": 1,
+          "$xor": 2
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "rtl/sync_fifo.sv": "e8caa93b97f277638b4a40d47f799a30508aad49502b6714a041d74179c05c79",
+    "rtl/async_fifo.sv": "c744bd6b39c5de1e839ee48e2d88370357345d4a06ec4be777b97f37cf8ee2d6",
+    "scripts/synthesize.py": "40312b5396a568213edc99334f73046e2fe87d1ea60a7632269a39d1b3207936"
+  },
+  "note": "Generic Yosys mapping only; no ASIC timing, area, power, or memory-macro claim."
+}

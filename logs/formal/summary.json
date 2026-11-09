@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "yosys_version",
+      "command": [
+        "yosys",
+        "-V"
+      ],
+      "exit_status": 0
+    },
+    {
+      "name": "z3_version",
+      "command": [
+        "z3",
+        "--version"
+      ],
+      "exit_status": 0
+    },
+    {
+      "name": "sby_revision",
+      "command": [
+        "git",
+        "-C",
+        "build/sby",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_status": 0
+    },
+    {
+      "name": "local_d2",
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/build/sby/sbysrc/sby.py",
+        "-d",
+        "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/local_d2",
+        "formal/async_fifo.sby",
+        "local_d2"
+      ],
+      "exit_status": 0,
+      "formal_status": "PASS 0 0",
+      "passed": true
+    },
+    {
+      "name": "prove_d2",
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/build/sby/sbysrc/sby.py",
+        "-d",
+        "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d2",
+        "formal/async_fifo.sby",
+        "prove_d2"
+      ],
+      "exit_status": 0,
+      "formal_status": "PASS 0 4",
+      "passed": true
+    },
+    {
+      "name": "prove_d4",
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/build/sby/sbysrc/sby.py",
+        "-d",
+        "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/prove_d4",
+        "formal/async_fifo.sby",
+        "prove_d4"
+      ],
+      "exit_status": 0,
+      "formal_status": "PASS 0 11",
+      "passed": true
+    },
+    {
+      "name": "cover_d2",
+      "command": [
+        "/usr/bin/python3",
+        "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/build/sby/sbysrc/sby.py",
+        "-d",
+        "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/formal/cover_d2",
+        "formal/async_fifo.sby",
+        "cover_d2"
+      ],
+      "exit_status": 0,
+      "formal_status": "PASS 0 77",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "rtl/async_fifo.sv": "c744bd6b39c5de1e839ee48e2d88370357345d4a06ec4be777b97f37cf8ee2d6",
+    "scripts/run_formal.py": "8bec6ec98ad91d02c35ef837814211d96fbd2d7cb954fb13ea318c339e5e9fdd",
+    "formal/async_fifo.sby": "f1fcd43141f9f8b2696a99461fc29d8a51527a921e3daaf37193155c5721dc66",
+    "formal/async_fifo_formal.sv": "97851bcfdd8a66cb133ff21e11db17053df202b3667a89dae095596cc0bf2957",
+    "formal/async_fifo_properties.svh": "572c15cb7b8afea86318b7182c009c248e48d4a995ea75e18e90493c7ceb5d6b"
+  }
+}

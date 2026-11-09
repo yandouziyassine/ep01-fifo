@@ -1,0 +1,912 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: async_fifo.sv
+Parsing formal SystemVerilog input from `async_fifo.sv' to AST representation.
+Warning: Encountered `translate_off' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using a portable and standards-compliant construct such as `ifdef is recommended!
+Storing AST representation for module `$abstract\async_fifo'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: async_fifo_formal.sv
+Parsing formal SystemVerilog input from `async_fifo_formal.sv' to AST representation.
+Storing AST representation for module `$abstract\async_fifo_formal'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\async_fifo_formal'.
+Generating RTLIL representation for module `\async_fifo_formal'.
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \async_fifo_formal
+Parameter \DATA_WIDTH = 2
+Parameter \DEPTH = 2
+
+3.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\async_fifo'.
+Parameter \DATA_WIDTH = 2
+Parameter \DEPTH = 2
+Generating RTLIL representation for module `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo'.
+
+3.2.3. Analyzing design hierarchy..
+Top module:  \async_fifo_formal
+Used module:     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo
+
+3.2.4. Analyzing design hierarchy..
+Top module:  \async_fifo_formal
+Used module:     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo
+Removing unused module `$abstract\async_fifo_formal'.
+Removing unused module `$abstract\async_fifo'.
+Removed 2 unused modules.
+Module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo directly or indirectly contains formal properties -> setting "keep" attribute.
+Module async_fifo_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$async_fifo_properties.svh:27$137 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo_properties.svh:24$135 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo_properties.svh:8$113 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo_properties.svh:5$111 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo.sv:82$107 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo.sv:71$103 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo.sv:68$96 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo.sv:58$94 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo.sv:49$92 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo.sv:24$78 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Marked 1 switch rules as full_case in process $proc$async_fifo.sv:21$76 in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 16 redundant assignments.
+Promoted 83 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$443'.
+  Set init value: $formal$async_fifo_properties.svh:89$75_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$441'.
+  Set init value: $formal$async_fifo_properties.svh:87$74_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$439'.
+  Set init value: $formal$async_fifo_properties.svh:72$70_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$437'.
+  Set init value: $formal$async_fifo_properties.svh:71$69_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$435'.
+  Set init value: $formal$async_fifo_properties.svh:70$68_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$433'.
+  Set init value: $formal$async_fifo_properties.svh:69$67_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$431'.
+  Set init value: $formal$async_fifo_properties.svh:67$66_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$429'.
+  Set init value: $formal$async_fifo_properties.svh:66$65_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$427'.
+  Set init value: $formal$async_fifo_properties.svh:64$64_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$425'.
+  Set init value: $formal$async_fifo_properties.svh:62$63_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$423'.
+  Set init value: $formal$async_fifo_properties.svh:61$62_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$421'.
+  Set init value: $formal$async_fifo_properties.svh:60$61_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$419'.
+  Set init value: $formal$async_fifo_properties.svh:59$60_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$417'.
+  Set init value: $formal$async_fifo_properties.svh:58$59_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$415'.
+  Set init value: $formal$async_fifo_properties.svh:57$58_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$413'.
+  Set init value: $formal$async_fifo_properties.svh:55$57_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$411'.
+  Set init value: $formal$async_fifo_properties.svh:50$56_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$409'.
+  Set init value: $formal$async_fifo_properties.svh:49$55_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$407'.
+  Set init value: $formal$async_fifo_properties.svh:48$54_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$405'.
+  Set init value: $formal$async_fifo_properties.svh:47$53_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$403'.
+  Set init value: $formal$async_fifo_properties.svh:45$52_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$401'.
+  Set init value: $formal$async_fifo_properties.svh:44$51_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$399'.
+  Set init value: $formal$async_fifo_properties.svh:41$50_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$397'.
+  Set init value: $formal$async_fifo_properties.svh:40$49_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$395'.
+  Set init value: $formal$async_fifo_properties.svh:38$48_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$393'.
+  Set init value: $formal$async_fifo_properties.svh:37$47_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$391'.
+  Set init value: $formal$async_fifo_properties.svh:36$46_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$389'.
+  Set init value: $formal$async_fifo_properties.svh:35$45_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$387'.
+  Set init value: $formal$async_fifo_properties.svh:32$44_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$385'.
+  Set init value: $formal$async_fifo_properties.svh:19$43_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$383'.
+  Set init value: $formal$async_fifo_properties.svh:17$42_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$381'.
+  Set init value: $formal$async_fifo_properties.svh:14$41_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$379'.
+  Set init value: $formal$async_fifo_properties.svh:12$40_EN = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:79$378'.
+  Set init value: \f_started = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:23$377'.
+  Set init value: \f_read_history = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:22$376'.
+  Set init value: \f_write_history = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:4$375'.
+  Set init value: \f_rd_reset_history = 1'0
+Found init rule in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:3$374'.
+  Set init value: \f_wr_reset_history = 1'0
+Found init rule in `\async_fifo_formal.$proc$async_fifo_formal.sv:0$15'.
+  Set init value: $formal$async_fifo_formal.sv:13$1_EN = 1'0
+Found init rule in `\async_fifo_formal.$proc$async_fifo_formal.sv:10$14'.
+  Set init value: \initialized = 1'0
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rd_rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:27$137'.
+Found async reset \wr_rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:24$135'.
+Found async reset \rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:8$113'.
+Found async reset \rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:5$111'.
+Found async reset \rd_rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:82$107'.
+Found async reset \wr_rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:71$103'.
+Found async reset \rd_rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:58$94'.
+Found async reset \wr_rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:49$92'.
+Found async reset \rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:24$78'.
+Found async reset \rst_n in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:21$76'.
+
+3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~19 debug messages>
+
+3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$443'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$441'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$439'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$437'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$435'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$433'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$431'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$429'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$427'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$425'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$423'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$421'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$419'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$417'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$415'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$413'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$411'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$409'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$407'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$405'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$403'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$401'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$399'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$397'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$395'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$393'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$391'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$389'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$387'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$385'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$383'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$381'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$379'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:79$378'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:23$377'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:22$376'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:4$375'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:3$374'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:88$333'.
+     1/2: $0$formal$async_fifo_properties.svh:89$75_EN[0:0]$335
+     2/2: $0$formal$async_fifo_properties.svh:89$75_CHECK[0:0]$334
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:86$328'.
+     1/2: $0$formal$async_fifo_properties.svh:87$74_EN[0:0]$330
+     2/2: $0$formal$async_fifo_properties.svh:87$74_CHECK[0:0]$329
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:81$307'.
+     1/6: $0$formal$async_fifo_properties.svh:81$71_EN[0:0]$309
+     2/6: $0$formal$async_fifo_properties.svh:81$71_CHECK[0:0]$308
+     3/6: $0$formal$async_fifo_properties.svh:83$72_EN[0:0]$311
+     4/6: $0$formal$async_fifo_properties.svh:83$72_CHECK[0:0]$310
+     5/6: $0$formal$async_fifo_properties.svh:84$73_EN[0:0]$313
+     6/6: $0$formal$async_fifo_properties.svh:84$73_CHECK[0:0]$312
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:80$306'.
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+     1/20: $0$formal$async_fifo_properties.svh:55$57_EN[0:0]$232
+     2/20: $0$formal$async_fifo_properties.svh:55$57_CHECK[0:0]$231
+     3/20: $0$formal$async_fifo_properties.svh:57$58_EN[0:0]$234
+     4/20: $0$formal$async_fifo_properties.svh:57$58_CHECK[0:0]$233
+     5/20: $0$formal$async_fifo_properties.svh:58$59_EN[0:0]$236
+     6/20: $0$formal$async_fifo_properties.svh:58$59_CHECK[0:0]$235
+     7/20: $0$formal$async_fifo_properties.svh:59$60_EN[0:0]$238
+     8/20: $0$formal$async_fifo_properties.svh:59$60_CHECK[0:0]$237
+     9/20: $0$formal$async_fifo_properties.svh:60$61_EN[0:0]$240
+    10/20: $0$formal$async_fifo_properties.svh:60$61_CHECK[0:0]$239
+    11/20: $0$formal$async_fifo_properties.svh:61$62_EN[0:0]$242
+    12/20: $0$formal$async_fifo_properties.svh:61$62_CHECK[0:0]$241
+    13/20: $0$formal$async_fifo_properties.svh:62$63_EN[0:0]$244
+    14/20: $0$formal$async_fifo_properties.svh:62$63_CHECK[0:0]$243
+    15/20: $0$formal$async_fifo_properties.svh:64$64_EN[0:0]$246
+    16/20: $0$formal$async_fifo_properties.svh:64$64_CHECK[0:0]$245
+    17/20: $0$formal$async_fifo_properties.svh:66$65_EN[0:0]$248
+    18/20: $0$formal$async_fifo_properties.svh:66$65_CHECK[0:0]$247
+    19/20: $0$formal$async_fifo_properties.svh:67$66_EN[0:0]$250
+    20/20: $0$formal$async_fifo_properties.svh:67$66_CHECK[0:0]$249
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+     1/18: $0$formal$async_fifo_properties.svh:32$44_EN[0:0]$150
+     2/18: $0$formal$async_fifo_properties.svh:32$44_CHECK[0:0]$149
+     3/18: $0$formal$async_fifo_properties.svh:35$45_EN[0:0]$152
+     4/18: $0$formal$async_fifo_properties.svh:35$45_CHECK[0:0]$151
+     5/18: $0$formal$async_fifo_properties.svh:36$46_EN[0:0]$154
+     6/18: $0$formal$async_fifo_properties.svh:36$46_CHECK[0:0]$153
+     7/18: $0$formal$async_fifo_properties.svh:37$47_EN[0:0]$156
+     8/18: $0$formal$async_fifo_properties.svh:37$47_CHECK[0:0]$155
+     9/18: $0$formal$async_fifo_properties.svh:38$48_EN[0:0]$158
+    10/18: $0$formal$async_fifo_properties.svh:38$48_CHECK[0:0]$157
+    11/18: $0$formal$async_fifo_properties.svh:40$49_EN[0:0]$160
+    12/18: $0$formal$async_fifo_properties.svh:40$49_CHECK[0:0]$159
+    13/18: $0$formal$async_fifo_properties.svh:41$50_EN[0:0]$162
+    14/18: $0$formal$async_fifo_properties.svh:41$50_CHECK[0:0]$161
+    15/18: $0$formal$async_fifo_properties.svh:44$51_EN[0:0]$164
+    16/18: $0$formal$async_fifo_properties.svh:44$51_CHECK[0:0]$163
+    17/18: $0$formal$async_fifo_properties.svh:45$52_EN[0:0]$166
+    18/18: $0$formal$async_fifo_properties.svh:45$52_CHECK[0:0]$165
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:27$137'.
+     1/1: $0\f_read_history[0:0]
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:24$135'.
+     1/1: $0\f_write_history[0:0]
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:16$125'.
+     1/4: $0$formal$async_fifo_properties.svh:17$42_EN[0:0]$128
+     2/4: $0$formal$async_fifo_properties.svh:17$42_CHECK[0:0]$127
+     3/4: $0$formal$async_fifo_properties.svh:19$43_EN[0:0]$130
+     4/4: $0$formal$async_fifo_properties.svh:19$43_CHECK[0:0]$129
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:11$115'.
+     1/4: $0$formal$async_fifo_properties.svh:12$40_EN[0:0]$118
+     2/4: $0$formal$async_fifo_properties.svh:12$40_CHECK[0:0]$117
+     3/4: $0$formal$async_fifo_properties.svh:14$41_EN[0:0]$120
+     4/4: $0$formal$async_fifo_properties.svh:14$41_CHECK[0:0]$119
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:8$113'.
+     1/1: $0\f_rd_reset_history[0:0]
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:5$111'.
+     1/1: $0\f_wr_reset_history[0:0]
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:82$107'.
+     1/4: $0\rd_empty[0:0]
+     2/4: $0\rd_gray[1:0]
+     3/4: $0\rd_binary[1:0]
+     4/4: $0\rd_data[1:0]
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:71$103'.
+     1/3: $0\wr_full[0:0]
+     2/3: $0\wr_gray[1:0]
+     3/3: $0\wr_binary[1:0]
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:68$96'.
+     1/3: $1$memwr$\mem$async_fifo.sv:69$39_EN[1:0]$102
+     2/3: $1$memwr$\mem$async_fifo.sv:69$39_DATA[1:0]$101
+     3/3: $1$memwr$\mem$async_fifo.sv:69$39_ADDR[0:0]$100
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:58$94'.
+     1/2: $0\wr_gray_sync[1:0]
+     2/2: $0\wr_gray_meta[1:0]
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:49$92'.
+     1/2: $0\rd_gray_sync[1:0]
+     2/2: $0\rd_gray_meta[1:0]
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:24$78'.
+     1/1: $0\rd_reset_pipe[1:0]
+Creating decoders for process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:21$76'.
+     1/1: $0\wr_reset_pipe[1:0]
+Creating decoders for process `\async_fifo_formal.$proc$async_fifo_formal.sv:0$15'.
+Creating decoders for process `\async_fifo_formal.$proc$async_fifo_formal.sv:10$14'.
+Creating decoders for process `\async_fifo_formal.$proc$async_fifo_formal.sv:11$8'.
+     1/2: $0$formal$async_fifo_formal.sv:13$1_EN[0:0]$10
+     2/2: $0$formal$async_fifo_formal.sv:13$1_CHECK[0:0]$9
+
+3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:81$71_CHECK' from process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:81$307'.
+No latch inferred for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:81$71_EN' from process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:81$307'.
+No latch inferred for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:83$72_CHECK' from process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:81$307'.
+No latch inferred for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:83$72_EN' from process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:81$307'.
+No latch inferred for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:84$73_CHECK' from process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:81$307'.
+No latch inferred for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:84$73_EN' from process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:81$307'.
+
+3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:89$75_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:88$333'.
+  created $dff cell `$procdff$592' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:89$75_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:88$333'.
+  created $dff cell `$procdff$593' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:87$74_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:86$328'.
+  created $dff cell `$procdff$594' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:87$74_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:86$328'.
+  created $dff cell `$procdff$595' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\f_started' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:80$306'.
+  created $ff cell `$procdff$596' with global clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:56$28$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$597' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:56$29$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$598' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:57$30$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$599' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:57$31$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$600' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:58$32$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$601' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:60$33$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$602' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:61$34$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$603' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:62$35$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$604' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:63$36$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$605' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:64$37$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$606' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:64$38$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$607' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:55$57_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$608' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:55$57_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$609' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:57$58_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$610' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:57$58_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$611' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:58$59_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$612' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:58$59_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$613' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:59$60_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$614' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:59$60_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$615' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:60$61_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$616' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:60$61_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$617' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:61$62_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$618' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:61$62_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$619' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:62$63_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$620' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:62$63_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$621' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:64$64_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$622' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:64$64_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$623' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:66$65_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$624' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:66$65_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$625' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:67$66_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$626' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:67$66_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$627' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:69$67_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$628' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:69$67_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$629' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:70$68_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$630' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:70$68_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$631' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:71$69_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$632' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:71$69_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$633' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:72$70_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$634' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:72$70_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+  created $dff cell `$procdff$635' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:34$19$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$636' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:34$20$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$637' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:35$21$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$638' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:35$22$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$639' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:36$23$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$640' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:38$24$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$641' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:40$25$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$642' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:41$26$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$643' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:42$27$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$644' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:32$44_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$645' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:32$44_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$646' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:35$45_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$647' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:35$45_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$648' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:36$46_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$649' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:36$46_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$650' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:37$47_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$651' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:37$47_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$652' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:38$48_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$653' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:38$48_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$654' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:40$49_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$655' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:40$49_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$656' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:41$50_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$657' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:41$50_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$658' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:44$51_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$659' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:44$51_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$660' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:45$52_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$661' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:45$52_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$662' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:47$53_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$663' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:47$53_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$664' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:48$54_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$665' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:48$54_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$666' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:49$55_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$667' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:49$55_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$668' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:50$56_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$669' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:50$56_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+  created $dff cell `$procdff$670' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\f_read_history' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:27$137'.
+  created $adff cell `$procdff$671' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\f_write_history' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:24$135'.
+  created $adff cell `$procdff$672' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:18$18$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:16$125'.
+  created $dff cell `$procdff$673' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:17$42_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:16$125'.
+  created $dff cell `$procdff$674' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:17$42_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:16$125'.
+  created $dff cell `$procdff$675' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:19$43_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:16$125'.
+  created $dff cell `$procdff$676' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:19$43_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:16$125'.
+  created $dff cell `$procdff$677' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$past$async_fifo_properties.svh:13$17$0' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:11$115'.
+  created $dff cell `$procdff$678' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:12$40_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:11$115'.
+  created $dff cell `$procdff$679' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:12$40_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:11$115'.
+  created $dff cell `$procdff$680' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:14$41_CHECK' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:11$115'.
+  created $dff cell `$procdff$681' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$formal$async_fifo_properties.svh:14$41_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:11$115'.
+  created $dff cell `$procdff$682' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\f_rd_reset_history' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:8$113'.
+  created $adff cell `$procdff$683' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\f_wr_reset_history' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:5$111'.
+  created $adff cell `$procdff$684' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\rd_data' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:82$107'.
+  created $adff cell `$procdff$685' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\rd_empty' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:82$107'.
+  created $adff cell `$procdff$686' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\rd_binary' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:82$107'.
+  created $adff cell `$procdff$687' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\rd_gray' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:82$107'.
+  created $adff cell `$procdff$688' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\wr_full' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:71$103'.
+  created $adff cell `$procdff$689' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\wr_binary' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:71$103'.
+  created $adff cell `$procdff$690' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\wr_gray' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:71$103'.
+  created $adff cell `$procdff$691' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$memwr$\mem$async_fifo.sv:69$39_ADDR' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:68$96'.
+  created $dff cell `$procdff$692' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$memwr$\mem$async_fifo.sv:69$39_DATA' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:68$96'.
+  created $dff cell `$procdff$693' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$memwr$\mem$async_fifo.sv:69$39_EN' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:68$96'.
+  created $dff cell `$procdff$694' with positive edge clock.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\wr_gray_meta' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:58$94'.
+  created $adff cell `$procdff$695' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\wr_gray_sync' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:58$94'.
+  created $adff cell `$procdff$696' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\rd_gray_meta' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:49$92'.
+  created $adff cell `$procdff$697' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\rd_gray_sync' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:49$92'.
+  created $adff cell `$procdff$698' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\rd_reset_pipe' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:24$78'.
+  created $adff cell `$procdff$699' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.\wr_reset_pipe' using process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:21$76'.
+  created $adff cell `$procdff$700' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo_formal.\initialized' using process `\async_fifo_formal.$proc$async_fifo_formal.sv:11$8'.
+  created $ff cell `$procdff$701' with global clock.
+Creating register for signal `\async_fifo_formal.$formal$async_fifo_formal.sv:13$1_CHECK' using process `\async_fifo_formal.$proc$async_fifo_formal.sv:11$8'.
+  created $ff cell `$procdff$702' with global clock.
+Creating register for signal `\async_fifo_formal.$formal$async_fifo_formal.sv:13$1_EN' using process `\async_fifo_formal.$proc$async_fifo_formal.sv:11$8'.
+  created $ff cell `$procdff$703' with global clock.
+
+3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$443'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$441'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$439'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$437'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$435'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$433'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$431'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$429'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$427'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$425'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$423'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$421'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$419'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$417'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$415'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$413'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$411'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$409'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$407'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$405'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$403'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$401'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$399'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$397'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$395'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$393'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$391'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$389'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$387'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$385'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$383'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$381'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:0$379'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:79$378'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:23$377'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:22$376'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:4$375'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:3$374'.
+Found and cleaned up 1 empty switch in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:88$333'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:88$333'.
+Found and cleaned up 1 empty switch in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:86$328'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:86$328'.
+Found and cleaned up 3 empty switches in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:81$307'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:81$307'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:80$306'.
+Found and cleaned up 4 empty switches in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:54$219'.
+Found and cleaned up 3 empty switches in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:31$139'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:27$137'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:24$135'.
+Found and cleaned up 2 empty switches in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:16$125'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:16$125'.
+Found and cleaned up 2 empty switches in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:11$115'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:11$115'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:8$113'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo_properties.svh:5$111'.
+Found and cleaned up 1 empty switch in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:82$107'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:82$107'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:71$103'.
+Found and cleaned up 1 empty switch in `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:68$96'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:68$96'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:58$94'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:49$92'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:24$78'.
+Removing empty process `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$proc$async_fifo.sv:21$76'.
+Removing empty process `async_fifo_formal.$proc$async_fifo_formal.sv:0$15'.
+Removing empty process `async_fifo_formal.$proc$async_fifo_formal.sv:10$14'.
+Found and cleaned up 1 empty switch in `\async_fifo_formal.$proc$async_fifo_formal.sv:11$8'.
+Removing empty process `async_fifo_formal.$proc$async_fifo_formal.sv:11$8'.
+Cleaned up 19 empty switches.
+
+3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+<suppressed ~48 debug messages>
+Optimizing module async_fifo_formal.
+<suppressed ~2 debug messages>
+
+3.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Optimizing module async_fifo_formal.
+
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+Finding unused cells or wires in module \async_fifo_formal..
+Removed 21 unused cells and 285 unused wires.
+<suppressed ~23 debug messages>
+
+3.6. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo...
+Checking module async_fifo_formal...
+Found and reported 0 problems.
+
+3.7. Executing OPT pass (performing simple optimizations).
+
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Optimizing module async_fifo_formal.
+
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo'.
+<suppressed ~81 debug messages>
+Finding identical cells in module `\async_fifo_formal'.
+Removed a total of 27 cells.
+
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \async_fifo_formal..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~62 debug messages>
+
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+    Consolidated identical input bits for $mux cell $procmux$580:
+      Old ports: A=2'00, B=2'11, Y=$0$memwr$\mem$async_fifo.sv:69$39_EN[1:0]$99
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\mem$async_fifo.sv:69$39_EN[1:0]$99 [0]
+      New connections: $0$memwr$\mem$async_fifo.sv:69$39_EN[1:0]$99 [1] = $0$memwr$\mem$async_fifo.sv:69$39_EN[1:0]$99 [0]
+  Optimizing cells in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+  Optimizing cells in module \async_fifo_formal.
+Performed a total of 1 changes.
+
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo'.
+<suppressed ~87 debug messages>
+Finding identical cells in module `\async_fifo_formal'.
+Removed a total of 29 cells.
+
+3.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+Finding unused cells or wires in module \async_fifo_formal..
+Removed 0 unused cells and 58 unused wires.
+<suppressed ~1 debug messages>
+
+3.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Optimizing module async_fifo_formal.
+
+3.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \async_fifo_formal..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~49 debug messages>
+
+3.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+  Optimizing cells in module \async_fifo_formal.
+Performed a total of 0 changes.
+
+3.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo'.
+Finding identical cells in module `\async_fifo_formal'.
+Removed a total of 0 cells.
+
+3.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+Finding unused cells or wires in module \async_fifo_formal..
+
+3.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Optimizing module async_fifo_formal.
+
+3.7.14. Finished OPT passes. (There is nothing left to do.)
+
+3.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo.sv:42$86 ($add).
+Removed top 1 bits (of 2) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo.sv:43$87 ($add).
+Removed top 1 bits (of 2) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$xor$async_fifo.sv:44$89 ($xor).
+Removed top 1 bits (of 2) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$xor$async_fifo.sv:45$91 ($xor).
+Removed top 1 bits (of 2) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:34$176 ($add).
+Removed top 1 bits (of 2) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$xor$async_fifo_properties.svh:37$182 ($xor).
+Removed top 31 bits (of 32) from port A of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:0$188 ($add).
+Removed top 31 bits (of 32) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:0$188 ($add).
+Removed top 30 bits (of 32) from port Y of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:0$188 ($add).
+Removed top 30 bits (of 32) from port A of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:38$193 ($add).
+Removed top 31 bits (of 32) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:38$193 ($add).
+Removed top 29 bits (of 32) from port Y of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:38$193 ($add).
+Removed top 29 bits (of 32) from port A of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$le$async_fifo_properties.svh:38$194 ($le).
+Removed top 31 bits (of 32) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$le$async_fifo_properties.svh:38$194 ($le).
+Removed top 1 bits (of 2) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:56$260 ($add).
+Removed top 1 bits (of 2) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$xor$async_fifo_properties.svh:59$266 ($xor).
+Removed top 31 bits (of 32) from port A of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:0$272 ($add).
+Removed top 31 bits (of 32) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:0$272 ($add).
+Removed top 30 bits (of 32) from port Y of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:0$272 ($add).
+Removed top 30 bits (of 32) from port A of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:60$277 ($add).
+Removed top 31 bits (of 32) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:60$277 ($add).
+Removed top 29 bits (of 32) from port Y of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:60$277 ($add).
+Removed top 29 bits (of 32) from port A of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$le$async_fifo_properties.svh:60$278 ($le).
+Removed top 31 bits (of 32) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$le$async_fifo_properties.svh:60$278 ($le).
+Removed top 31 bits (of 32) from port B of cell $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$gt$async_fifo_properties.svh:89$337 ($gt).
+Removed top 30 bits (of 32) from wire $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:0$188_Y.
+Removed top 30 bits (of 32) from wire $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:0$272_Y.
+Removed top 29 bits (of 32) from wire $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:38$193_Y.
+Removed top 29 bits (of 32) from wire $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$add$async_fifo_properties.svh:60$277_Y.
+Removed top 31 bits (of 32) from wire $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$eqx$async_fifo_properties.svh:0$187_Y.
+Removed top 31 bits (of 32) from wire $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$eqx$async_fifo_properties.svh:0$192_Y.
+Removed top 31 bits (of 32) from wire $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$eqx$async_fifo_properties.svh:0$276_Y.
+
+3.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+Finding unused cells or wires in module \async_fifo_formal..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+3.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.11. Executing OPT pass (performing simple optimizations).
+
+3.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Optimizing module async_fifo_formal.
+
+3.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo'.
+Finding identical cells in module `\async_fifo_formal'.
+Removed a total of 0 cells.
+
+3.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+Finding unused cells or wires in module \async_fifo_formal..
+
+3.11.4. Finished fast OPT passes.
+
+3.12. Printing statistics.
+
+=== $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo ===
+
+   Number of wires:                244
+   Number of wire bits:            413
+   Number of public wires:          35
+   Number of public wire bits:      52
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                270
+     $add                            8
+     $adff                          17
+     $assert                        30
+     $cover                          6
+     $dff                           70
+     $eq                            19
+     $eqx                            4
+     $ff                             1
+     $gt                             1
+     $le                             3
+     $logic_and                     25
+     $logic_not                     19
+     $logic_or                       4
+     $lt                             1
+     $mem_v2                         1
+     $mux                           53
+     $not                            1
+     $sub                            1
+     $xor                            6
+
+=== async_fifo_formal ===
+
+   Number of wires:                 17
+   Number of wire bits:             19
+   Number of public wires:          12
+   Number of public wire bits:      14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 14
+     $anyseq                         6
+     $assume                         1
+     $ff                             3
+     $logic_not                      1
+     $mux                            2
+     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo      1
+
+=== design hierarchy ===
+
+   async_fifo_formal                 1
+     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo      1
+
+   Number of wires:                261
+   Number of wire bits:            432
+   Number of public wires:          47
+   Number of public wire bits:      66
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                283
+     $add                            8
+     $adff                          17
+     $anyseq                         6
+     $assert                        30
+     $assume                         1
+     $cover                          6
+     $dff                           70
+     $eq                            19
+     $eqx                            4
+     $ff                             4
+     $gt                             1
+     $le                             3
+     $logic_and                     25
+     $logic_not                     20
+     $logic_or                       4
+     $lt                             1
+     $mem_v2                         1
+     $mux                           55
+     $not                            1
+     $sub                            1
+     $xor                            6
+
+3.13. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo...
+Checking module async_fifo_formal...
+Found and reported 0 problems.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \async_fifo_formal
+Used module:     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo
+
+4.2. Analyzing design hierarchy..
+Top module:  \async_fifo_formal
+Used module:     $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo
+Removed 0 unused modules.
+Module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo directly or indirectly contains formal properties -> setting "keep" attribute.
+Module async_fifo_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+
+5. Executing jny backend.
+
+6. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: a268163558, CPU: user 0.06s system 0.01s, MEM: 13.28 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 19% 6x opt_expr (0 sec), 17% 2x hierarchy (0 sec), ...

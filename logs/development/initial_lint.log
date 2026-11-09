@@ -1,0 +1,10 @@
+%Warning-SYNCASYNCNET: rtl/sync_fifo.sv:11:34: Signal flopped as both synchronous and async: 'rst_n'
+                       rtl/sync_fifo.sv:35:14: ... Location of async usage
+   35 |         if (!rst_n) begin
+      |              ^~~~~
+                       rtl/sync_fifo.sv:30:13: ... Location of sync usage
+   30 |         if (rst_n && write_accept)
+      |             ^~~~~
+                       ... For warning description see https://verilator.org/warn/SYNCASYNCNET?v=5.020
+                       ... Use "/* verilator lint_off SYNCASYNCNET */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)

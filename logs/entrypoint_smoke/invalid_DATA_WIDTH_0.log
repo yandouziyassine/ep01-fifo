@@ -1,0 +1,5 @@
+$ vvp build/invalid_DATA_WIDTH_0.vvp
+FATAL: rtl/sync_fifo.sv:61: DATA_WIDTH must be positive
+       Time: 0  Scope: sync_fifo
+
+EXIT_STATUS=1

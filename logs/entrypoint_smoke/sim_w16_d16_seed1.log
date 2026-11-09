@@ -1,0 +1,6 @@
+$ vvp build/w16_d16.vvp +SEED=1 +CYCLES=1
+START width=16 depth=16 seed=1 random_cycles=1
+PASS width=16 depth=16 seed=1 cycles=156 writes=85 reads=68 overflow=2 underflow=3 both_full=1 both_empty=1 both_middle=1 resets=3
+tb/tb_sync_fifo.sv:155: $finish called at 1656000 (1ps)
+
+EXIT_STATUS=0

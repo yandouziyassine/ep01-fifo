@@ -1,0 +1,25 @@
+##   0:00:00  Solver: z3
+##   0:00:00  Trying induction in step 16..
+##   0:00:00  Trying induction in step 15..
+##   0:00:00  Trying induction in step 14..
+##   0:00:00  Trying induction in step 13..
+##   0:00:00  Trying induction in step 12..
+##   0:00:00  Trying induction in step 11..
+##   0:00:00  Trying induction in step 10..
+##   0:00:00  Trying induction in step 9..
+##   0:00:00  Trying induction in step 8..
+##   0:00:00  Trying induction in step 7..
+##   0:00:00  Trying induction in step 6..
+##   0:00:00  Trying induction in step 5..
+##   0:00:00  Trying induction in step 4..
+##   0:00:01  Trying induction in step 3..
+##   0:00:01  Trying induction in step 2..
+##   0:00:01  Trying induction in step 1..
+##   0:00:01  Trying induction in step 0..
+##   0:00:01  Temporal induction failed!
+##   0:00:01  Assert failed in async_fifo_formal.dut: async_fifo_properties.svh:21.78-22.52 ($assert$async_fifo_properties.svh:21$263)
+##   0:00:01  Assert failed in async_fifo_formal.dut: async_fifo_properties.svh:19.52-21.77 ($assert$async_fifo_properties.svh:19$262)
+##   0:00:01  Assert failed in async_fifo_formal.dut: async_fifo_properties.svh:17.51-18.58 ($assert$async_fifo_properties.svh:17$260)
+##   0:00:01  Assert failed in async_fifo_formal.dut: async_fifo_properties.svh:13.43-15.77 ($assert$async_fifo_properties.svh:13$258)
+##   0:00:01  Writing trace to VCD file: logs/development/induction_probe.vcd
+##   0:00:01  Status: FAILED

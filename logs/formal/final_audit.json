@@ -1,0 +1,8 @@
+{
+  "formal_hashes_match": true,
+  "all_four_tasks_pass": true,
+  "milestone1_hashes_match": true,
+  "six_witness_files_present": true,
+  "documentation_links_valid": true,
+  "integration_smoke_passed": true
+}

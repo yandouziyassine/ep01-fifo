@@ -1,0 +1,7 @@
+$ make -s -f tb/cocotb/Makefile DATA_WIDTH=8 DEPTH=16 SIM_BUILD=build/async_w8_d16 COCOTB_RESULTS_FILE=/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/async_initial/sim_w8_d16_wp10000_rp14000_p0_s1_n400.xml
+ENV={"COCOTB_RANDOM_SEED": "1", "FIFO_COVERAGE_FILE": "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/async_initial/sim_w8_d16_wp10000_rp14000_p0_s1_n400.json", "FIFO_DEPTH": "16", "FIFO_EVENTS": "400", "FIFO_SEED": "1", "RD_PERIOD_PS": "14000", "RD_PHASE_PS": "0", "WR_PERIOD_PS": "10000"}
+make: cocotb-config: No such file or directory
+tb/cocotb/Makefile:10: /Makefile.sim: No such file or directory
+make: *** No rule to make target '/Makefile.sim'.  Stop.
+
+EXIT_STATUS=2

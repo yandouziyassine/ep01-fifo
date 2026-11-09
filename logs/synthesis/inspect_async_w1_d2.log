@@ -1,0 +1,234 @@
+$ yosys -Q -p 'read_verilog -sv rtl/async_fifo.sv; chparam -set DATA_WIDTH 1 -set DEPTH 2 async_fifo; hierarchy -top async_fifo; proc; memory_collect; opt; stat'
+
+-- Running command `read_verilog -sv rtl/async_fifo.sv; chparam -set DATA_WIDTH 1 -set DEPTH 2 async_fifo; hierarchy -top async_fifo; proc; memory_collect; opt; stat' --
+
+1. Executing Verilog-2005 frontend: rtl/async_fifo.sv
+Parsing SystemVerilog input from `rtl/async_fifo.sv' to AST representation.
+Warning: Encountered `translate_off' comment! Such legacy hot comments are supported by Yosys, but are not part of any formal language specification. Using a portable and standards-compliant construct such as `ifdef is recommended!
+Generating RTLIL representation for module `\async_fifo'.
+Successfully finished Verilog frontend.
+Parameter \DATA_WIDTH = 1
+Parameter \DEPTH = 2
+
+2. Executing AST frontend in derive mode using pre-parsed AST for module `\async_fifo'.
+Parameter \DATA_WIDTH = 1
+Parameter \DEPTH = 2
+Generating RTLIL representation for module `$paramod$015096e513c08a136dd957d234a792e9b6932c0a\async_fifo'.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \async_fifo
+
+3.2. Analyzing design hierarchy..
+Top module:  \async_fifo
+Removed 0 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo.sv:21$38 in module async_fifo.
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo.sv:24$40 in module async_fifo.
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo.sv:49$54 in module async_fifo.
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo.sv:58$56 in module async_fifo.
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo.sv:68$58 in module async_fifo.
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo.sv:71$65 in module async_fifo.
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo.sv:82$69 in module async_fifo.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 12 redundant assignments.
+Promoted 3 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\async_fifo.$proc$rtl/async_fifo.sv:21$38'.
+Found async reset \rst_n in `\async_fifo.$proc$rtl/async_fifo.sv:24$40'.
+Found async reset \wr_rst_n in `\async_fifo.$proc$rtl/async_fifo.sv:49$54'.
+Found async reset \rd_rst_n in `\async_fifo.$proc$rtl/async_fifo.sv:58$56'.
+Found async reset \wr_rst_n in `\async_fifo.$proc$rtl/async_fifo.sv:71$65'.
+Found async reset \rd_rst_n in `\async_fifo.$proc$rtl/async_fifo.sv:82$69'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~2 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\async_fifo.$proc$rtl/async_fifo.sv:21$38'.
+     1/1: $0\wr_reset_pipe[1:0]
+Creating decoders for process `\async_fifo.$proc$rtl/async_fifo.sv:24$40'.
+     1/1: $0\rd_reset_pipe[1:0]
+Creating decoders for process `\async_fifo.$proc$rtl/async_fifo.sv:49$54'.
+     1/2: $0\rd_gray_sync[1:0]
+     2/2: $0\rd_gray_meta[1:0]
+Creating decoders for process `\async_fifo.$proc$rtl/async_fifo.sv:58$56'.
+     1/2: $0\wr_gray_sync[1:0]
+     2/2: $0\wr_gray_meta[1:0]
+Creating decoders for process `\async_fifo.$proc$rtl/async_fifo.sv:68$58'.
+     1/3: $1$memwr$\mem$rtl/async_fifo.sv:69$37_EN[0:0]$64
+     2/3: $1$memwr$\mem$rtl/async_fifo.sv:69$37_DATA[0:0]$63
+     3/3: $1$memwr$\mem$rtl/async_fifo.sv:69$37_ADDR[0:0]$62
+Creating decoders for process `\async_fifo.$proc$rtl/async_fifo.sv:71$65'.
+     1/3: $0\wr_full[0:0]
+     2/3: $0\wr_gray[1:0]
+     3/3: $0\wr_binary[1:0]
+Creating decoders for process `\async_fifo.$proc$rtl/async_fifo.sv:82$69'.
+     1/4: $0\rd_empty[0:0]
+     2/4: $0\rd_gray[1:0]
+     3/4: $0\rd_binary[1:0]
+     4/4: $0\rd_data[0:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\async_fifo.\wr_reset_pipe' using process `\async_fifo.$proc$rtl/async_fifo.sv:21$38'.
+  created $adff cell `$procdff$84' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\rd_reset_pipe' using process `\async_fifo.$proc$rtl/async_fifo.sv:24$40'.
+  created $adff cell `$procdff$85' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\rd_gray_meta' using process `\async_fifo.$proc$rtl/async_fifo.sv:49$54'.
+  created $adff cell `$procdff$86' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\rd_gray_sync' using process `\async_fifo.$proc$rtl/async_fifo.sv:49$54'.
+  created $adff cell `$procdff$87' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\wr_gray_meta' using process `\async_fifo.$proc$rtl/async_fifo.sv:58$56'.
+  created $adff cell `$procdff$88' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\wr_gray_sync' using process `\async_fifo.$proc$rtl/async_fifo.sv:58$56'.
+  created $adff cell `$procdff$89' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.$memwr$\mem$rtl/async_fifo.sv:69$37_ADDR' using process `\async_fifo.$proc$rtl/async_fifo.sv:68$58'.
+  created $dff cell `$procdff$90' with positive edge clock.
+Creating register for signal `\async_fifo.$memwr$\mem$rtl/async_fifo.sv:69$37_DATA' using process `\async_fifo.$proc$rtl/async_fifo.sv:68$58'.
+  created $dff cell `$procdff$91' with positive edge clock.
+Creating register for signal `\async_fifo.$memwr$\mem$rtl/async_fifo.sv:69$37_EN' using process `\async_fifo.$proc$rtl/async_fifo.sv:68$58'.
+  created $dff cell `$procdff$92' with positive edge clock.
+Creating register for signal `\async_fifo.\wr_full' using process `\async_fifo.$proc$rtl/async_fifo.sv:71$65'.
+  created $adff cell `$procdff$93' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\wr_binary' using process `\async_fifo.$proc$rtl/async_fifo.sv:71$65'.
+  created $adff cell `$procdff$94' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\wr_gray' using process `\async_fifo.$proc$rtl/async_fifo.sv:71$65'.
+  created $adff cell `$procdff$95' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\rd_data' using process `\async_fifo.$proc$rtl/async_fifo.sv:82$69'.
+  created $adff cell `$procdff$96' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\rd_empty' using process `\async_fifo.$proc$rtl/async_fifo.sv:82$69'.
+  created $adff cell `$procdff$97' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\rd_binary' using process `\async_fifo.$proc$rtl/async_fifo.sv:82$69'.
+  created $adff cell `$procdff$98' with positive edge clock and negative level reset.
+Creating register for signal `\async_fifo.\rd_gray' using process `\async_fifo.$proc$rtl/async_fifo.sv:82$69'.
+  created $adff cell `$procdff$99' with positive edge clock and negative level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `async_fifo.$proc$rtl/async_fifo.sv:21$38'.
+Removing empty process `async_fifo.$proc$rtl/async_fifo.sv:24$40'.
+Removing empty process `async_fifo.$proc$rtl/async_fifo.sv:49$54'.
+Removing empty process `async_fifo.$proc$rtl/async_fifo.sv:58$56'.
+Found and cleaned up 1 empty switch in `\async_fifo.$proc$rtl/async_fifo.sv:68$58'.
+Removing empty process `async_fifo.$proc$rtl/async_fifo.sv:68$58'.
+Removing empty process `async_fifo.$proc$rtl/async_fifo.sv:71$65'.
+Found and cleaned up 1 empty switch in `\async_fifo.$proc$rtl/async_fifo.sv:82$69'.
+Removing empty process `async_fifo.$proc$rtl/async_fifo.sv:82$69'.
+Cleaned up 2 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+<suppressed ~3 debug messages>
+
+5. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+6.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$96 ($adff) from module async_fifo (D = $memrd$\mem$rtl/async_fifo.sv:92$72_DATA, Q = \rd_data).
+
+6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 7 unused cells and 42 unused wires.
+<suppressed ~8 debug messages>
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+6.16. Finished OPT passes. (There is nothing left to do.)
+
+7. Printing statistics.
+
+=== async_fifo ===
+
+   Number of wires:                 40
+   Number of wire bits:             55
+   Number of public wires:          29
+   Number of public wire bits:      43
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 30
+     $add                            2
+     $adff                          12
+     $adffe                          1
+     $eq                             2
+     $logic_and                      4
+     $logic_not                      2
+     $mem_v2                         1
+     $mux                            3
+     $not                            1
+     $xor                            2
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 2e88838991, CPU: user 0.02s system 0.00s, MEM: 16.75 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 22% 2x read_verilog (0 sec), 21% 4x opt_expr (0 sec), ...
+
+EXIT_STATUS=0

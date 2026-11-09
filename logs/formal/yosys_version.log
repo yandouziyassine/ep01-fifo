@@ -1,0 +1,4 @@
+$ yosys -V
+Yosys 0.33 (git sha1 2584903a060)
+
+EXIT_STATUS=0

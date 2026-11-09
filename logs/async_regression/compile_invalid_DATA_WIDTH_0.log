@@ -1,0 +1,4 @@
+$ iverilog -g2012 -s async_fifo -Pasync_fifo.DATA_WIDTH=0 -o build/async_invalid_DATA_WIDTH_0.vvp rtl/async_fifo.sv
+ENV={}
+
+EXIT_STATUS=0

@@ -1,0 +1,11 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:01:31 (91)
+Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+engine_0 (smtbmc z3) did not return a status
+engine_0 did not produce any traces
+unreached cover statements:
+  async_fifo_formal.dut.$cover$async_fifo_properties.svh:28$305 at async_fifo_properties.svh:28.52-29.33
+  async_fifo_formal.dut.$cover$async_fifo_properties.svh:29$306 at async_fifo_properties.svh:29.34-30.40
+  async_fifo_formal.dut.$cover$async_fifo_properties.svh:30$307 at async_fifo_properties.svh:30.41-31.71
+  async_fifo_formal.dut.$cover$async_fifo_properties.svh:49$318 at async_fifo_properties.svh:49.53-50.33
+  async_fifo_formal.dut.$cover$async_fifo_properties.svh:50$319 at async_fifo_properties.svh:50.34-51.41
+  async_fifo_formal.dut.$cover$async_fifo_properties.svh:51$320 at async_fifo_properties.svh:51.42-52.71

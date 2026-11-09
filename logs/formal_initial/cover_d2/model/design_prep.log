@@ -1,0 +1,169 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module async_fifo_formal.
+Found 0 SCCs in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing CLK2FFLOGIC pass (convert clocked FFs to generic $ff cells).
+Modifying write port 0 on memory $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.mem: CLK=\wr_clk, A=$0$memwr$\mem$async_fifo.sv:69$35_ADDR[0:0]$87, D=$0$memwr$\mem$async_fifo.sv:69$35_DATA[1:0]$88
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$596 ($adff): CLK=\wr_clk, D={ \wr_reset_pipe [0] 1'1 }, Q=\wr_reset_pipe
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$595 ($adff): CLK=\rd_clk, D={ \rd_reset_pipe [0] 1'1 }, Q=\rd_reset_pipe
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$594 ($adff): CLK=\wr_clk, D=\rd_gray_meta, Q=\rd_gray_sync
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$593 ($adff): CLK=\wr_clk, D=\rd_gray, Q=\rd_gray_meta
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$592 ($adff): CLK=\rd_clk, D=\wr_gray_meta, Q=\wr_gray_sync
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$591 ($adff): CLK=\rd_clk, D=\wr_gray, Q=\wr_gray_meta
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$587 ($adff): CLK=\wr_clk, D=\wr_gray_next, Q=\wr_gray
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$586 ($adff): CLK=\wr_clk, D=\wr_binary_next, Q=\wr_binary
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$585 ($adff): CLK=\wr_clk, D=$0$past$async_fifo_properties.svh:21$23$0[0:0]$112, Q=\wr_full
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$584 ($adff): CLK=\rd_clk, D=\rd_gray_next, Q=\rd_gray
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$583 ($adff): CLK=\rd_clk, D=\rd_binary_next, Q=\rd_binary
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$582 ($adff): CLK=\rd_clk, D=$0$past$async_fifo_properties.svh:41$31$0[0:0]$188, Q=\rd_empty
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$581 ($adff): CLK=\rd_clk, D=$0\rd_data[1:0], Q=\rd_data
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$580 ($adff): CLK=\wr_clk, D=1'1, Q=\f_write_history
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$579 ($adff): CLK=\rd_clk, D=1'1, Q=\f_read_history
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$577 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:30$47_CHECK[0:0]$136, Q=$formal$async_fifo_properties.svh:30$47_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$575 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:29$46_CHECK[0:0]$134, Q=$formal$async_fifo_properties.svh:29$46_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$573 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:28$45_CHECK[0:0]$132, Q=$formal$async_fifo_properties.svh:28$45_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$572 ($dff): CLK=\wr_clk, D=1'1, Q=$formal$async_fifo_properties.svh:27$44_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$571 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:27$44_CHECK[0:0]$130, Q=$formal$async_fifo_properties.svh:27$44_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$569 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:25$43_CHECK[0:0]$128, Q=$formal$async_fifo_properties.svh:25$43_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$568 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:24$42_EN[0:0]$127, Q=$formal$async_fifo_properties.svh:24$42_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$567 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:24$42_CHECK[0:0]$126, Q=$formal$async_fifo_properties.svh:24$42_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$565 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:21$41_CHECK[0:0]$124, Q=$formal$async_fifo_properties.svh:21$41_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$563 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:19$40_CHECK[0:0]$122, Q=$formal$async_fifo_properties.svh:19$40_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$561 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:18$39_CHECK[0:0]$120, Q=$formal$async_fifo_properties.svh:18$39_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$559 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:17$38_CHECK[0:0]$118, Q=$formal$async_fifo_properties.svh:17$38_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$558 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:16$37_EN[0:0]$117, Q=$formal$async_fifo_properties.svh:16$37_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$557 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:16$37_CHECK[0:0]$116, Q=$formal$async_fifo_properties.svh:16$37_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$556 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:13$36_EN[0:0]$115, Q=$formal$async_fifo_properties.svh:13$36_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$555 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:13$36_CHECK[0:0]$114, Q=$formal$async_fifo_properties.svh:13$36_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$554 ($dff): CLK=\wr_clk, D=\rd_gray_meta, Q=$past$async_fifo_properties.svh:22$24$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$553 ($dff): CLK=\wr_clk, D=$0$past$async_fifo_properties.svh:21$23$0[0:0]$112, Q=$past$async_fifo_properties.svh:21$23$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$552 ($dff): CLK=\wr_clk, D=\wr_gray, Q=$past$async_fifo_properties.svh:19$22$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$551 ($dff): CLK=\wr_clk, D=\wr_binary, Q=$past$async_fifo_properties.svh:17$21$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$550 ($dff): CLK=\wr_clk, D=\wr_en, Q=$past$async_fifo_properties.svh:16$20$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$549 ($dff): CLK=\wr_clk, D=\wr_full, Q=$past$async_fifo_properties.svh:16$19$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$548 ($dff): CLK=\wr_clk, D=\wr_accept, Q=$past$async_fifo_properties.svh:15$18$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$547 ($dff): CLK=\wr_clk, D=\wr_binary, Q=$past$async_fifo_properties.svh:15$17$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$545 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:51$60_CHECK[0:0]$216, Q=$formal$async_fifo_properties.svh:51$60_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$543 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:50$59_CHECK[0:0]$214, Q=$formal$async_fifo_properties.svh:50$59_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$541 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:49$58_CHECK[0:0]$212, Q=$formal$async_fifo_properties.svh:49$58_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$540 ($dff): CLK=\rd_clk, D=1'1, Q=$formal$async_fifo_properties.svh:48$57_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$539 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:48$57_CHECK[0:0]$210, Q=$formal$async_fifo_properties.svh:48$57_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$537 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:46$56_CHECK[0:0]$208, Q=$formal$async_fifo_properties.svh:46$56_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$536 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:45$55_EN[0:0]$207, Q=$formal$async_fifo_properties.svh:45$55_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$535 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:45$55_CHECK[0:0]$206, Q=$formal$async_fifo_properties.svh:45$55_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$534 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:43$54_EN[0:0]$205, Q=$formal$async_fifo_properties.svh:43$54_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$533 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:43$54_CHECK[0:0]$204, Q=$formal$async_fifo_properties.svh:43$54_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$531 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:41$53_CHECK[0:0]$202, Q=$formal$async_fifo_properties.svh:41$53_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$529 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:40$52_CHECK[0:0]$200, Q=$formal$async_fifo_properties.svh:40$52_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$527 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:39$51_CHECK[0:0]$198, Q=$formal$async_fifo_properties.svh:39$51_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$525 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:38$50_CHECK[0:0]$196, Q=$formal$async_fifo_properties.svh:38$50_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$524 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:37$49_EN[0:0]$195, Q=$formal$async_fifo_properties.svh:37$49_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$523 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:37$49_CHECK[0:0]$194, Q=$formal$async_fifo_properties.svh:37$49_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$522 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:35$48_EN[0:0]$193, Q=$formal$async_fifo_properties.svh:35$48_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$521 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:35$48_CHECK[0:0]$192, Q=$formal$async_fifo_properties.svh:35$48_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$520 ($dff): CLK=\rd_clk, D=\rd_data, Q=$past$async_fifo_properties.svh:43$34$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$519 ($dff): CLK=\rd_clk, D=\rd_accept, Q=$past$async_fifo_properties.svh:43$33$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$518 ($dff): CLK=\rd_clk, D=\wr_gray_meta, Q=$past$async_fifo_properties.svh:42$32$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$517 ($dff): CLK=\rd_clk, D=$0$past$async_fifo_properties.svh:41$31$0[0:0]$188, Q=$past$async_fifo_properties.svh:41$31$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$516 ($dff): CLK=\rd_clk, D=\rd_gray, Q=$past$async_fifo_properties.svh:40$30$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$515 ($dff): CLK=\rd_clk, D=\rd_binary, Q=$past$async_fifo_properties.svh:38$29$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$514 ($dff): CLK=\rd_clk, D=\rd_en, Q=$past$async_fifo_properties.svh:37$28$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$513 ($dff): CLK=\rd_clk, D=\rd_empty, Q=$past$async_fifo_properties.svh:37$27$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$512 ($dff): CLK=\rd_clk, D=\rd_accept, Q=$past$async_fifo_properties.svh:36$26$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$511 ($dff): CLK=\rd_clk, D=\rd_binary, Q=$past$async_fifo_properties.svh:36$25$0
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$509 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:66$64_EN[0:0]$288, Q=$formal$async_fifo_properties.svh:66$64_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$508 ($dff): CLK=\wr_clk, D=$0$formal$async_fifo_properties.svh:66$64_CHECK[0:0]$287, Q=$formal$async_fifo_properties.svh:66$64_CHECK
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$507 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:68$65_EN[0:0]$293, Q=$formal$async_fifo_properties.svh:68$65_EN
+Replacing $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$procdff$506 ($dff): CLK=\rd_clk, D=$0$formal$async_fifo_properties.svh:68$65_CHECK[0:0]$292, Q=$formal$async_fifo_properties.svh:68$65_CHECK
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo_formal..
+Finding unused cells or wires in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+Removed 0 unused cells and 71 unused wires.
+<suppressed ~1 debug messages>
+
+7. Executing FORMALFF pass.
+Setting unused undefined initial value of $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$auto$clk2fflogic.cc:177:execute$617 ($ff) from 2'x to 2'00
+Setting unused undefined initial value of $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$auto$clk2fflogic.cc:180:execute$619 ($ff) from 1'x to 1'0
+Setting unused undefined initial value of $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.$auto$clk2fflogic.cc:183:execute$621 ($ff) from 2'x to 2'00
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+Finding unused cells or wires in module \async_fifo_formal..
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo...
+Checking module async_fifo_formal...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo.
+<suppressed ~17 debug messages>
+Optimizing module async_fifo_formal.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo'.
+<suppressed ~528 debug messages>
+Finding identical cells in module `\async_fifo_formal'.
+Removed a total of 176 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+Finding unused cells or wires in module \async_fifo_formal..
+Removed 0 unused cells and 178 unused wires.
+<suppressed ~3 debug messages>
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$10f8727f5650ba9ee29629469ccf062b39d0097f\async_fifo..
+Finding unused cells or wires in module \async_fifo_formal..
+Removed 0 unused cells and 29 unused wires.
+<suppressed ~2 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 07218a2f32, CPU: user 0.08s system 0.01s, MEM: 13.78 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 30% 4x opt_clean (0 sec), 23% 1x opt_expr (0 sec), ...

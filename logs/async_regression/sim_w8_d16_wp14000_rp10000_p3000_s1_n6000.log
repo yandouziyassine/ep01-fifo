@@ -1,0 +1,21 @@
+$ make -s -f tb/cocotb/Makefile DATA_WIDTH=8 DEPTH=16 SIM_BUILD=build/async_w8_d16 COCOTB_RESULTS_FILE=/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/async_regression/sim_w8_d16_wp14000_rp10000_p3000_s1_n6000.xml
+ENV={"COCOTB_RANDOM_SEED": "1", "FIFO_COVERAGE_FILE": "/mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/logs/async_regression/sim_w8_d16_wp14000_rp10000_p3000_s1_n6000.json", "FIFO_DEPTH": "16", "FIFO_EVENTS": "6000", "FIFO_SEED": "1", "RD_PERIOD_PS": "10000", "RD_PHASE_PS": "3000", "WR_PERIOD_PS": "14000"}
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:93   in _embed_init_python              Using Python 3.12.4 interpreter at /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/build/venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 12.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with supplied seed 1
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /mnt/c/Users/yando/Documents/ChatGPT/ASIC/ep01_fifo/build/venv/lib/python3.12/site-packages/cocotb
+     0.00ns INFO     cocotb.regression                  pytest not found, install it to enable better AssertionError messages
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_async_fifo.fifo_integrity (1/1)
+ 23303.00ns INFO     cocotb.async_fifo                  PASS_ASYNC {"collisions": 285, "concurrent_accepts": 28, "depth": 16, "events": 7323, "peak": 16, "phase_ps": 3000, "random_events": 6000, "rd_period_ps": 10000, "read_edges": 2285, "reads": 567, "rejected_reads": 584, "rejected_writes": 264, "resets": 4, "seed": 1, "width": 8, "wr_period_ps": 14000, "write_edges": 1665, "writes": 591}
+ 23303.00ns INFO     cocotb.regression                  test_async_fifo.fifo_integrity passed
+ 23303.00ns INFO     cocotb.regression                  ****************************************************************************************
+                                                        ** TEST                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ****************************************************************************************
+                                                        ** test_async_fifo.fifo_integrity   PASS       23303.00           0.42      55262.57  **
+                                                        ****************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                23303.00           0.43      53716.63  **
+                                                        ****************************************************************************************
+
+EXIT_STATUS=0
